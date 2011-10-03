@@ -1,7 +1,6 @@
 body {
 margin:5px 2px 2px 5px; 
 background: url(vilibbg.jpg) no-repeat;
-background-color:black;
 }
 
 a:link {text-decoration:none;}
@@ -24,10 +23,9 @@ width: 100px;
 height: 50px;
 float:right;
 }
-/*Este es un comentario*/
 
 #username {
-width: 140px;
+width: 100px;
 height: 20px;
 color:#FFF;
 position:relative;
@@ -45,9 +43,6 @@ padding-top:8px;
 float: left;
 width: 150px;
 height: 540px;
-/*opacity: .60;
-filter: alpha(opacity=60);
- border: thick red dotted;*/
 }
 
 #main {
@@ -120,12 +115,12 @@ background-color:#a6c5dd;
 .listaDocs{
 	-webkit-padding-start: 0px;
 	position: relative;
-	left: 40%;
+	left: 35%;
 	
 	display: inline;
 	display: -webkit-inline-box;
 	list-style: none;
-	background-color: white;
+	background-color: rgba(118,18,76,.7);
 }
 
 .listaDocs li{
@@ -151,8 +146,41 @@ input {
   	-o-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
   	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
   	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
-	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-transform: uppercase; text-shadow: 0px -1px 0px #334f71;
+	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-shadow: 0px -1px 0px #334f71;
 }
+
+select
+{
+	padding-left: 10px;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-right:5px;
+	color:#cee9f2;
+	border: 0px solid rgba(0,0,0,0.5);
+  	border-radius: 10px 10px 10px 10px;
+  	background: rgba(0,0,0,0.25);
+  	box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+  	-o-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+  	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+  	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-shadow: 0px -1px 0px #334f71;
+}
+
+option{
+	padding-left: 10px;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-right:5px;
+	color:#cee9f2;
+  	border-radius: 10px 10px 10px 10px;
+  	background-color: rgba(0,0,0,0.8);
+  	box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+  	-o-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+  	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+  	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-shadow: 0px -1px 0px #334f71;
+}
+
 	input::-webkit-input-placeholder  {
     	color: #a1b2c3; text-shadow: 0px -1px 0px #38506b;
 	}
@@ -171,7 +199,7 @@ textarea {
   	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
 	border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
 	
-	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-transform: uppercase; text-shadow: 0px -1px 0px #334f71;
+	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-shadow: 0px -1px 0px #334f71;
 }
 	textarea::-webkit-input-placeholder  {
     	color: #a1b2c3; text-shadow: 0px -1px 0px #38506b;
@@ -180,8 +208,9 @@ textarea {
 	    color: #a1b2c3; text-shadow: 0px -1px 0px #38506b;
 	}
 
-input:focus, textarea:focus {
-	background-color: rgba(0,0,0,0.25);
+input:focus, textarea:focus, select:focus {
+	outline:none;
+	background-color: rgba(118,18,76,.7);
   	box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
   	-o-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
   	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
