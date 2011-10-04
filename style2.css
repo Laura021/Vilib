@@ -51,6 +51,7 @@ width: 150px;
 height: 540px;
 }
 
+
 #main {
 float: left;
 width: 650px;
@@ -118,6 +119,10 @@ background-color:#a6c5dd;
 	box-shadow: inset 0px 0px 50px rgba(0,0,0,.8), 0 0 5px #333;
 }
 
+.iconosDocs
+{
+}
+
 .listaDocs{
 	-webkit-padding-start: 0px;
 	position: relative;
@@ -126,7 +131,6 @@ background-color:#a6c5dd;
 	display: inline;
 	display: -webkit-inline-box;
 	list-style: none;
-	background-color: rgba(118,18,76,.7);
 }
 
 .listaDocs li{
