@@ -81,8 +81,7 @@ session_start();
 
 		<label name='descripcion'>Descripcion</label>
 		
-        <textarea name='txtDescripcion' cols='' rows='10'>
-		</textarea>
+        <textarea name='txtDescripcion' cols='' rows=''></textarea>
 		<br />
 		<br />
         
