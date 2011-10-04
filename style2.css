@@ -83,6 +83,7 @@ width: 150px;
 height: 540px;
 }
 
+
 #main {
 float: left;
 width: 650px;
@@ -150,6 +151,10 @@ background-color:#a6c5dd;
 	box-shadow: inset 0px 0px 50px rgba(0,0,0,.8), 0 0 5px #333;
 }
 
+.iconosDocs
+{
+}
+
 .listaDocs{
 	-webkit-padding-start: 0px;
 	position: relative;
@@ -158,7 +163,6 @@ background-color:#a6c5dd;
 	display: inline;
 	display: -webkit-inline-box;
 	list-style: none;
-	background-color: rgba(118,18,76,.7);
 }
 
 .listaDocs li{
@@ -256,8 +260,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 input[type=submit] {
-	width: 120px; height: 40px; float: right; padding: 10px 15px; margin: 0 15px 0 0;
-	-moz-box-shadow: 0px 0px 5px #999;-webkit-box-shadow: 0px 0px 5px #999;
+	width: 120px; height: 27px; margin: 0 15px 0 0;
 	border: 1px solid #556f8c;
 	background: -moz-linear-gradient(top, #718DA9 0%, #415D79 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#718DA9), color-stop(100%,#415D79)); /* webkit */

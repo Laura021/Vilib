@@ -58,7 +58,8 @@ session_start();
 				echo "<div class=\"docs\">";								
 				echo "<span  class=\"tituloDoc\">".$row['nombre']." </span><br /><hr>";
 				echo "Descripcion: ".$row['Descripcion']."<br />";
-				?>   
+				?> 
+				<div class="iconosDocs">  
 				<ul class="listaDocs">                     
                     <li><img src="images/icono_compartir.png" >     </li>
 	                <li><img src="images/icono_descargar.png" >     </li>
@@ -68,7 +69,7 @@ session_start();
                       	<img src="images/icono_eliminar.png" > </a> </li>
             	    <li><a href="<?php echo $row['Ruta']?>"> 
                        	<img src="images/icono_ver.png" ></a>       </li>
-                </ul></div>
+                </ul></div></div>
                 <br />
                     
   	<?php    } //fin del while
