@@ -5,6 +5,38 @@ background: url(vilibbg.jpg) no-repeat;
 
 a:link {text-decoration:none;}
 
+#formaRegistro {
+	
+	background-color: rgba(14, 67, 99, .7);
+	width: 200px;
+	height: 530px;
+	position: absolute;
+	text-align: center;
+	padding: 10px; 5px; 5px; 5px;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -100px;
+    
+    font-family: "Maiandra GD";
+    border-radius: 10px;
+    font-size: 17;
+    display: inline-block;
+    
+    }
+
+.terminadoTXT{
+		
+		text-decoration: none;
+		color: rgba(14, 67, 99, .7);
+		font-family: "Rockwell Extra Bold";
+		font-size: 20px;
+		top: 50%;
+    	left: 50%;
+    	margin-top: -200px;
+    	margin-left: -100px;
+	}
+	
 #container {
 margin-left: auto;
 margin-right: auto;
