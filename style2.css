@@ -19,9 +19,9 @@ background: url('images/logo.png') no-repeat;
 }
 
 #usrdata {
-width: 180px;
+width: auto;
 height: 50px;
-text-align: center;
+text-align: left;
 float:right;
 }
 
