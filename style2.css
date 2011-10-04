@@ -23,21 +23,26 @@ width: auto;
 height: 50px;
 text-align: left;
 float:right;
+display: block;
 }
 
 #username {
-width: 100px;
+width: auto;
 height: 20px;
 color:#FFF;
 position:relative;
 float:right;
 padding-top:5px;
+padding-right: 15px;
+text-align: center;
+display: block;
 }
 #logout {
 width: 100px;
 height: 20px;
 float:right;
 padding-top:8px;
+display: block;
 }
 
 #leftside {
