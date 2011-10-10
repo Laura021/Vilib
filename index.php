@@ -82,6 +82,11 @@
      <button  type="submit" name="entrar" id="entrar" value="entrar" class="submitBtn"><span>Entrar</span></button>
      
     </form>
+    
+    
+    <br />
+    <a class="registroTXT" href="registro.php">¡Regístrate aquí!</a>
+    
    </div>
     
 	</div>
