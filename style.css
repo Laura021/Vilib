@@ -80,67 +80,108 @@
 }
 
 	
-/*	.loginbox
-{	
- background: #FFF;
- border:none;
- width:134px;
- height:15px;
- margin:0;
- padding: 2px 7px 0px 7px;
- font-family:Verdana, Arial, Helvetica, sans-serif;
- font-size:11px;
- -moz-border-radius: 15px;
-border-radius: 15px;
-}*/
-	
-	
-button { 
-	position: relative;
-	border: 0; 
-	padding: 0;
-	cursor: pointer;
-	overflow: visible; /* removes extra side padding in IE */
+.menu_button {
+    border:1px solid #93A98F;
+    -wwwebkit-box-shadow:0 1px 0 rgba(255,255,255,0.5);
+    -mmmoz-box-shadow:0 1px 0 rgba(255,255,255,0.5);
+    display:block;
+    display:inline-block;
+    border: 0px solid rgba(0, 0, 0, 0.5);
+    padding:0;
+    text-align:center;
+    background:#D2DFC5;
+    background:-webkit-gradient(linear, left top, left bottom, from(#D2DFC5), to(#BDD1B4) );
+    background:-moz-linear-gradient(-90deg, #D2DFC5, #BDD1B4);
+    _background:#D2DFC5;
+    _filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#D2DFC5', EndColorStr='#BDD1B4');
+    cursor: pointer;
+    text-shadow: 0px 0px 5px#47BED6;
+    -webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
 }
 
-button::-moz-focus-inner {
-	border: none;  /* overrides extra padding in Firefox */
+.menu_button:hover,.menu_button.hover {
+    -wwwebkit-box-shadow:0 1px 0 rgba(255,255,255,0.3);
+    text-decoration:none;
+    background:#E0E9DA;
+    background:-webkit-gradient(linear, left top, left bottom, from(#E0E9DA), to(#C2D5B8) );
+    background:-moz-linear-gradient(-90deg, #E0E9DA, #C2D5B8);
+    _background:#E0E9DA;
+    _filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#E0E9DA', EndColorStr='#C2D5B8');
+}
+.menu_button:active {
+    -wwwebkit-box-shadow:0 1px 0 rgba(255,255,255,0.3);
+    text-decoration:none;
+    background:#A2B598;
+    background:-webkit-gradient(linear, left top, left bottom, from(#A2B598), to(#C0C9BA) );
+    background:-moz-linear-gradient(-90deg, #A2B598, #C0C9BA);
+    _background:#A2B598;
+    _filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#A2B598', EndColorStr='#C0C9BA');
 }
 
-button span { 
-	position: relative;
-	display: block; 
-	white-space: nowrap;	
+.blue {
+    border-color:#1D4253;
+    background:#0088B5;
+    background:-webkit-gradient(linear, left top, left bottom, from(#0088B5), to(#005D7C) );
+    background:-moz-linear-gradient(-90deg, #0088B5, #005D7C);
+    _background:#0088B5;
+    _filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#0088B5', EndColorStr='#005D7C');
+    color:#FFFFF9 !important;
+}
+.blue span {
+    border-top-color:#00B8D3;
+}
+.blue:hover, .smbutton-blue.hover {
+	text-decoration:none;
+    background:#00A4C6;
+    background:-webkit-gradient(linear, left top, left bottom, from(#00A4C6), to(#00739A) );
+    background:-moz-linear-gradient(-90deg, #00A4C6, #00739A);
+    _background:#00A4C6;
+    _filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00A4C6', EndColorStr='#00739A');
+}
+.blue:active, .blue.active {
+	text-decoration:none;
+    background:#00537A;
+    background:-webkit-gradient(linear, left top, left bottom, from(#00537A), to(#0084A6) );
+    background:-moz-linear-gradient(-90deg, #00537A, #0084A6);
+    _background:#00537A;
+    _filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#00537A', EndColorStr='#0084A6');
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-	/* Safari and Google Chrome only - fix margins */
-	button span {
-		margin-top: -1px;
-	}
+.orange {
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+.orange:hover {
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.orange:active {
+	color: #fcd3a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 }
 
-
-/* OPTIONAL BUTTON STYLES for applying custom look and feel: */		
-button.submitBtn { 
-	padding: 0 15px 0 0; 
-	margin-right:5px; 
-	font-size:2em; 
-	text-align: center; 
-	background: transparent url(images/btn_blue_sprite.png) no-repeat right -140px; 
+.bigrounded {
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
 }
-	
-button.submitBtn span {
-	padding: 13px 0 0 15px; 
-	height:37px; 
-	background: transparent url(images/btn_blue_sprite.png) no-repeat left top; 
-	color:#fff; 
+.medium {
+	text-align:center;
+	font-size: 26px;
+	padding: .3em 1.5em .32em;
 }
-	
-button.submitBtn:hover, button.submitBtnHover { /* the redundant class is used to apply the hover state with a script */
-	background-position: right -210px; 
-}
-	
-button.submitBtn:hover span, button.submitBtnHover span {
-	background-position: 0 -70px;
+.small {
+	color: #FFF;
+	font-size: 12px;
+	padding: .4em 1em .275em;
 }
