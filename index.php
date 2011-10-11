@@ -2,7 +2,7 @@
 //valida si existe una sesión, si no regresa a la pagina de login
 	if(!empty($_SESSION['access']))
 	{
-		header("Location: inicio.php");
+		header("Location: Inicio.php");
 	}
 ?>
 <html>

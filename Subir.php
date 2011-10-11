@@ -45,16 +45,11 @@ if ( $_FILES["file"]["size"] < 10000000)
 		    //nota: se deben de dar permisos a la carpeta para poder mover el archivo.
 			//En Unix chmod -R 777 /ruta/nombreCarpeta/
       				move_uploaded_file($_FILES["file"]["tmp_name"],"docs/" . $nombre.".". $ext);
-					$nombreFinal= $nombre;
+					$nombreFinal= $nombre.".".$ext;
       				$path="docs/".$nombreFinal;
 		
-					  //echo "Guardado en: ".$path;
-	  
-//echo "INSERT INTO `vilib`.`documentos` (`Id_Dpto`, `Id_Cat`, `Nombre`, `Fecha`,`Ruta` ,`Descripcion`) 
-	//							VALUES ($dpto,$cat, '$nombreFinal', '2011-05-14','$path' ,'$descr')";
-								
-					$qry="INSERT INTO `Vilib`.`documentos` (`Id_Dpto`, `Id_Cat`, `Nombre`, `Fecha`,`Ruta` ,`Descripcion`) 
-													VALUES ($dpto,$cat, '$nombreFinal', '2011-05-14','$path' ,'$descr')";
+					$qry="INSERT INTO `vilib`.`documentos` (`Id_Dpto`, `Id_Cat`, `Nombre`, `Fecha`,`Ruta` ,`Descripcion`) 
+													VALUES ($dpto,$cat, '$nombre', '2011-05-14','$path' ,'$descr')";
 
 					mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 					
