@@ -5,14 +5,7 @@
 	  	$txt="";
 	  return $txt=end(explode(".", $str));
 	  }
-
- 	  $host="localhost:3306";
-	  $userDB="root";
-	  $passwordDB="";
-	  $dbname="Vilib";
-	  
-	  
-$cxn= mysqli_connect($host,$userDB,$passwordDB,$dbname) or die ("No se pudo conectar al servidor");
+include ("conexion.php");
 
 $nombre=$_POST['txtNombre'];
 $dpto=$_POST['listaDpto'];
