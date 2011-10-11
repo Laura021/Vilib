@@ -78,7 +78,7 @@
     
     
     <br />
-    <a class="registroTXT" href="registro.php">¡Regístrate aquí!</a>
+    <a href="registro.php">¡Regístrate aquí!</a>
     
    </div>
     

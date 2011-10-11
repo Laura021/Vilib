@@ -2,13 +2,25 @@
 /* CSS Document */
 
 	body{background: url(vilibbg.jpg) no-repeat;}
+	a:link {
+		text-decoration:none;
+		text-shadow: 0px 0px 5px#47bed6;
+		color: #FFFFFF;
+		font: 30px Tahoma, Helvetica, Arial, Sans-Serif;
+		text-align: center;
+		transition: all .75s ease-in-out;
+		-webkit-transition: all .75s ease-in-out;
+		-moz-transition: all .75s ease-in-out;
+		}
+	a:hover {text-shadow: 0px 0px 12px rgba(240,182,34,1);
+	color: #FFFFFF;}
+	a:visited{color: #FFFFFF;}
 
     #formulario {
 	position: static;
 	text-align:center;
     top:50%;
     left: 50%;
-    
     }
 	
 	#container {
