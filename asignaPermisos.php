@@ -92,26 +92,56 @@ session_start();
         <!--<input type="text" id="txtTipo" value="<?php echo $row['Tipo']?>" />-->
    		</select>
    		<br />
+   		<br/>
    		<label>Descripcion de los permisos</label>
    		<br />
+   		<br/>
    		<?php
    		 
-   		 if($row["Id_tipo"]== 1)
-   		 {
-   		 	echo "<label>Entre al fin del jefeeeee <label/>";
-			
-   		 }
-		 if($row["Id_tipo"]== 2)
-   		 {
-   		 	echo "<label>Entre al fin del docente <label/>";
-			
-   		 }
-		 if($row["Id_tipo"]== 3)
-   		 {
-   		 	echo "<label>Entre al fin del alumno <label/>";
-			
-   		 }
+   		 $tipo=$_SESSION['tipo_usu'];
 		 
+   		 if($row['Id_tipo'] == 1)
+   		 {
+   		 	echo "<label>Entre al fin del jefeeeee <label/>";?>
+			
+			<ul id="permiiiisos :3">
+				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled" />Edicion de documentos.</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled" />Compartir documentos</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled" />Eliminar documentos</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled" />Asignar permisos a usuarios</li>
+			</ul>
+			
+   		 <?php }
+		 if($row['Id_tipo'] == 2)
+   		 {
+   		 	echo "<label>Entre al fin del docente <label/>";?>
+   		 	<ul id="permiiiisos :3">
+				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled" />Edicion de documentos.</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled" />Compartir documentos</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled" />Eliminar documentos de su departamento</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled" />Asignar permisos a usuarios de menor rango</li>
+			</ul>
+			
+			
+   		 <?php }
+		 if($row['Id_tipo'] == 3)
+   		 {
+   		 	echo "<label>Entre al fin del alumno <label/>";?>
+   		 		
+   		 	<ul id="permiiiisos :3">
+				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
+				<li><input type="checkbox"   disabled="disabled" />Edicion de documentos.</li>
+				<li><input type="checkbox"   disabled="disabled" />Compartir documentos</li>
+				<li><input type="checkbox"   disabled="disabled" />Eliminar documentos</li>
+				<li><input type="checkbox"   disabled="disabled" />Asignar permisos a usuarios</li>
+			</ul>
+			
+			
+   		 <?php }
+		 /*Debemos tener la descripcion de los permiso*/
+		
    		?> 
     </form>
 
