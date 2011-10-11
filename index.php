@@ -79,7 +79,7 @@
      <br />
      <br />
      
-     <button  type="submit" name="entrar" id="entrar" value="entrar" class="submitBtn"><span>Entrar</span></button>
+     <button  type="submit" name="entrar" id="entrar" value="entrar" class="menu_button blue medium" content="content"/>Entrar</button>
      
     </form>
     
