@@ -30,7 +30,7 @@ git<html>
 		$dbname="Vilib";
 
 
-		$qry="INSERT INTO usuarios (N_Control, Id_tipo, Id_Esp, Pass, Nombre, Paterno, Materno, Edad, Mail) VALUES ($numC, 3, 1,'$contra', '$usuario', '$paterno', '$materno', $edad, '$mail')";
+		$qry="INSERT INTO usuarios (N_Control, Id_tipo, Id_Esp, Id_Dpto, Pass, Nombre, Paterno, Materno, Edad, Mail) VALUES ($numC, 3, 1, 7,'$contra', '$usuario', '$paterno', '$materno', $edad, '$mail')";
 		$cxn= mysqli_connect($host,$userDB,$passwordDB,$dbname) or die ("No se pudo conectar al servidor");
 		$result=mysqli_query($cxn,$qry) or die(mysqli_error($cxn));
 		
