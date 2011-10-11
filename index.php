@@ -23,22 +23,15 @@
 
 		if($cosa != "")
 		{
-	  		$host="localhost:3306";
-	  		$userDB="root";
-	  		$passwordDB="";
-	  		$dbname="vilib";
-			
-	 		
-//			include ("conexion.php");
+ 		
+			include ("conexion.php");
 			
 	  		$usuario=$_POST['txtUsuario'];
 	  		$pass=$_POST['txtContraseña'];
 	  
 			$qry="SELECT N_Control,Pass FROM usuarios WHERE N_Control='$usuario' and Pass='$pass'";
-	  		$cxn= mysqli_connect($host,$userDB,$passwordDB,$dbname)
-				 or die ("No se pudo conectar al servidor");
-
-			$result=mysqli_query($cxn,$qry) or die(mysqli_error($cxn));
+	  		
+			$result=mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 
 	  		$row=mysqli_fetch_assoc($result);
 	  
@@ -49,13 +42,13 @@
 			if(count($row))
 			{
 	  		
-				$qry="SELECT Nombre,Paterno FROM usuarios WHERE N_Control='$usuario'";
-				$result=mysqli_query($cxn,$qry) or die(mysqli_error($cxn));
+				$qry="SELECT Nombre,Paterno,Id_tipo FROM usuarios WHERE N_Control='$usuario'";
+				$result=mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 				$row=mysqli_fetch_assoc($result);
 		  	 
 	  			$_SESSION['access'] = true;
 				$_SESSION['usuario']=$row['Nombre']." ".$row['Paterno'];
-	  
+	  			$_SESSION['tipo_usu']=$row['Id_tipo'];
 			  	header("Location: Inicio.php");
 	
  	  		}else{

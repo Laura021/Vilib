@@ -4,7 +4,8 @@
 <div id="header"><h2>Bienvenido a Vilib</h2> 
 	<div id="usrdata">
 		<div id="username">
-		<?php echo $_SESSION['usuario']; ?>
+		<?php echo $_SESSION['usuario']." ".$_SESSION['tipo_usu']; ?>
+		
 		</div></br>
 		<div id="logout">
 		<a class="menu_button orange small" href="logout.php">Logout</a>
