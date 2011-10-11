@@ -56,7 +56,7 @@ if ( $_FILES["file"]["size"] < 10000000)
 					$qry="INSERT INTO `Vilib`.`documentos` (`Id_Dpto`, `Id_Cat`, `Nombre`, `Fecha`,`Ruta` ,`Descripcion`) 
 													VALUES ($dpto,$cat, '$nombreFinal', '2011-05-14','$path' ,'$descr')";
 
-					mysqli_query($cxn,$qry) or die(mysqli_error($cxn));
+					mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 					
 					$msj = "Archivo :".$_FILES["file"]["name"]." subido con exito.";
 					
