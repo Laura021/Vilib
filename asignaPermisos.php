@@ -1,7 +1,17 @@
+<?php
+session_start();
+
+//valida si existe una sesi�n, si no regresa a la pagina de login
+	if(empty($_SESSION['access']))
+	{
+		header("Location: index.php");
+	}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style2.css" media="screen"/>
 <title>Asignacion de permisos de usuarios</title>
 </head>
 <body>
@@ -15,6 +25,7 @@
        				,Paterno,Materno
 	   				,Edad
      				,Mail
+     				,usuarios.Id_tipo
       				,tipo_usuario.Nombre as 'Tipo'
       				,especialidad.Nombre as 'Especialidad'
       				,departamento.Nombre as 'Dpto'
@@ -32,6 +43,11 @@
 	 
 	$row = mysqli_fetch_assoc($result);
 	
+	$qry2="SELECT * FROM tipo_usuario";
+	
+	$resultado = mysqli_query($conexion,$qry2) or die ("no se pudo realizar la consulta 2");
+	
+	//$row2 = mysqli_fetch_assoc($resultado);
 		
 	?>
     
@@ -52,12 +68,51 @@
         <input type="text" id="txtEsp" value="<?php echo $row['Especialidad']?>" disabled="disabled"/>
         <br />
         <label>Departamento :</label>
-        <input type="text" id="txtDpto" value="<?php echo $row['Dpto']?>" />
+        <input type="text" id="txtDpto" value="<?php echo $row['Dpto']?>" disabled="disabled" />
         <br>
         <label>Tipo de Usuario: </label>
-        <input type="text" id="txtTipo" value="<?php echo $row['Tipo']?>" />
-   
-        
+        <select name="listaDptos">
+        	<?php
+        	
+        	while($row2 = mysqli_fetch_assoc($resultado))
+			
+			if($row["Id_tipo"] == $row2["Id_tipo"])
+					{
+						echo " <option value='".$row2["Id_tipo"]."' selected='selected'> "  
+										.$row2["Nombre"]. 
+							 " </option> ";
+					}
+					else
+					{echo " <option value='".$row2["Id_tipo"]."'> "  
+										.$row2["Nombre"]. 
+							     " </option> ";				
+					}
+        	
+        	?>
+        <!--<input type="text" id="txtTipo" value="<?php echo $row['Tipo']?>" />-->
+   		</select>
+   		<br />
+   		<label>Descripcion de los permisos</label>
+   		<br />
+   		<?php
+   		 
+   		 if($row["Id_tipo"]== 1)
+   		 {
+   		 	echo "<label>Entre al fin del jefeeeee <label/>";
+			
+   		 }
+		 if($row["Id_tipo"]== 2)
+   		 {
+   		 	echo "<label>Entre al fin del docente <label/>";
+			
+   		 }
+		 if($row["Id_tipo"]== 3)
+   		 {
+   		 	echo "<label>Entre al fin del alumno <label/>";
+			
+   		 }
+		 
+   		?> 
     </form>
 
 </body>
