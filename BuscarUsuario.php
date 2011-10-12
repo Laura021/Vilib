@@ -1,11 +1,13 @@
 <?php
 session_start();
 
-//valida si existe una sesión, si no regresa a la pagina de login
+//valida si existe una sesiï¿½n, si no regresa a la pagina de login
 	if(empty($_SESSION['access']))
 	{
 		header("Location: index.php");
 	}
+	
+		include ("restriccion.php");
 ?>
 
 <html>
@@ -42,7 +44,7 @@ session_start();
             
               <label>
 			    	<input type="radio" name="GpoBsqda" value="nControl" id="GpoBsqda_1" />
-				    Número Control
+				    Nï¿½mero Control
 			  </label>
               
   		</form>
