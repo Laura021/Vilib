@@ -17,8 +17,15 @@ session_start();
 <link rel="stylesheet" href="style2.css" media="screen"/>
 <title>Asignacion de permisos de usuarios</title>
 </head>
+
 <body>
+	
+	<div id= "container">
+		
+	
 	<?php 
+	include ("cabecera.php");
+	include ("lateral.php");
 	include ("conexion.php");
 	
 	$id=$_GET['id'];
@@ -53,7 +60,9 @@ session_start();
 	//$row2 = mysqli_fetch_assoc($resultado);
 		
 	?>
-    
+    <div id="main">
+    	
+   
     <form action="" name="permisos" method="post">
     	<label>Nombre: </label>
         <input type="text" id="txtNombre" value="<?php echo $row['Nombre']?>"  disabled="disabled"/>
@@ -94,6 +103,7 @@ session_start();
         	?>
         <!--<input type="text" id="txtTipo" value="<?php echo $row['Tipo']?>" />-->
    		</select>
+   
    		<br />
    		<br/>
    		<label>Descripcion de los permisos</label>
@@ -145,7 +155,9 @@ session_start();
    		 <?php }
 		 /*Debemos tener la descripcion de los permiso*/
 		
-   		?> 
+   		?>
+   		</div>
+   		</div><!-- fin del div de container--> 
     </form>
 
 </body>
