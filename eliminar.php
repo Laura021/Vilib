@@ -6,7 +6,7 @@ session_start();
 	{
 		header("Location: index.php");
 	}
-		
+		include ("restriccion.php");
 ?>
 <html>
 	<head>
