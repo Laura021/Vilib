@@ -1,34 +1,10 @@
-git<html>
+<html>
 <title>Registro</title>
 
 <head>
 		
 		<link rel="stylesheet" href="style2.css" media="screen"/>
 		
-		
-		
-		<script>
-			
-	$(document).ready(function(){  
-    	//variables globales 
-    	
-    	var inputUsername = $("#txtUsuarioRegistro");    	  
-    	var inputPassword1 = $("#txtContraseñaRegistro");  
-    	
-    function validateUsername(){  
-    	//NO cumple longitud minima  
-    	if(inputUsername.val().length < 4){  
-       	 reqUsername.addClass("error");  
-        return false;  	
-    	}
-    }  
-    
-    inputUsername.blur(validateUsername);
-    inputUsername.keyup(validateUsername);
-    
-   )};
-	
-		</script>
 </head>
 
 <body>
@@ -44,6 +20,9 @@ git<html>
 	if(isset($_POST['txtNC'])){
 		
 		//i_t_93@hotmail.com
+		$patron= "(^((\w)*(([a-z]+[A-Z]+[\d]+)|([A-Z]+[a-z]+[\d]+)|([\d]+[a-z]+[A-Z]+)|([\d]+[A-Z]+[a-z]+))(\w)*))";
+		$patronNumeros="([\d]+)";
+		$patronEdad="([\d]{2})";
 		$numC=$_POST['txtNC'];
 		$contra=$_POST['txtContraseñaRegistro'];
 		$usuario=$_POST['txtUsuarioRegistro'];
@@ -54,31 +33,48 @@ git<html>
 		$error = false;
 		require 'conexion.php';
 
-		/*if(strlen($usuario)<5){
+		if(strlen($usuario)<=1){
 			echo "Tu nombre de usuario es muy corto. D:";
 			?>
 			<a href="registro.php" class="menu_button blue">Volver al formulario.</a>
 			<?
 		}else
-		if(strlen($paterno)<5){
+		if(strlen($paterno)<=1){
 			echo "Tu apellido paterno es muy corto. D:";
 			?>
 			<a href="registro.php" class="menu_button blue">Volver al formulario.</a>
 			<?
 		}else
-		if(strlen($materno)<5){
+		if(strlen($materno)<=1){
 			echo "Tu apellido materno es muy corto. D:";
 			?>
 			<a href="registro.php" class="menu_button blue">Volver al formulario.</a>
 			<?
 		}else
-		if(strlen($contra)<5){
-			echo "Tu apellido materno es muy corto. D:";
+		if(strlen($contra)<8){
+			echo "Tu contraseña es muy corta. Debe contener al menos 8 caracteres.";
 			?>
 			<a href="registro.php" class="menu_button blue">Volver al formulario.</a>
 			<?
-		}else*/
-			
+		}else
+		if (!preg_match($patron, $contra)) {
+    		echo "Tu contraseña no cumple con las normas de seguridad (al menos una mayúscula, una minúscula y un número).";
+			?>
+			<a href="registro.php" class="menu_button blue">Volver al formulario.</a>
+			<?
+		}else
+		if(!preg_match($patronNumeros, $numC)){
+			echo "Por favor, utiliza solo números para tu número de control.";
+			?>
+			<a href="registro.php" class="menu_button blue">Volver al formulario.</a>
+			<?
+		}else
+		if(!preg_match($patronEdad, $edad)){
+			echo "Por favor, utiliza solo números para tu número de control.";
+			?>
+			<a href="registro.php" class="menu_button blue">Volver al formulario.</a>
+			<?
+		}
 		$qry="INSERT INTO usuarios (N_Control, Id_tipo, Id_Esp, Id_Dpto, Pass, Nombre, Paterno, Materno, Edad, Mail) VALUES ($numC, 3, 1, 7,'$contra', '$usuario', '$paterno', '$materno', $edad, '$mail')";
 		$result=mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 		$terminado=1;
@@ -105,15 +101,15 @@ git<html>
      <br />
      <br />
      <label id="titles">Contrase&ntildea:</label><br />
-     <input required placeholder="Incluye letras, num. y mayusculas." pattern="(^(\w)*(([a-z]+[A-Z]+[\d]+)|([A-Z]+[a-z]+[\d]+)|([\d]+[a-z]+[A-Z]+)|([\d]+[A-Z]+[a-z]+))(\w)*)" class="loginbox" name="txtContraseñaRegistro" type="password" id="txtContraseñaRegistro" />
+     <input  required placeholder="Incluye letras, num. y mayusculas." pattern="(^((\w)*(([a-z]+[A-Z]+[\d]+)|([A-Z]+[a-z]+[\d]+)|([\d]+[a-z]+[A-Z]+)|([\d]+[A-Z]+[a-z]+))(\w)*))" class="loginbox" name="txtContraseñaRegistro" type="password" id="txtContraseñaRegistro" />
      <br />
      <br />
      <label id="titles">N&uacutemero de Control:</label><br />
-     <input required placeholder="Utiliza solo numeros." class="loginbox" name="txtNC" type="text" id="txtNumC" />
+     <input required placeholder="Utiliza solo numeros." class="loginbox" name="txtNC" type="text" id="txtNumC" pattern="[\d]+" />
      <br />
      <br />
      <label id="titles">Edad:</label><br />
-     <input required placeholder="Utiliza solo numeros" class="loginbox" name="txtEdad" type="text" id="txtEd" />
+     <input required placeholder="Utiliza solo numeros" class="loginbox" name="txtEdad" type="text" id="txtEd" pattern="[\d]{2}"/>
      <br />
      <br />
      <label id="titles">Mail:</label><br />
@@ -138,7 +134,4 @@ if($terminado==1){
 }
 ?>
 </body>
-
-
-
 </html>
