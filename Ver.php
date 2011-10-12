@@ -19,10 +19,23 @@ session_start();
 
 <?php
 
-	if(isset($_POST['criterio']))
+	if(isset($_POST['criterio']) || !empty($_SESSION['verCriterio']))
 	{
-		$criterio = $_POST['criterio'];
-		$_SESSION['verCriterio'] = $criterio;
+		if(empty($_POST['criterio']))
+		{
+			if (!empty($_SESSION['verCriterio']))
+			{
+				$criterio = $_SESSION['verCriterio'];
+			}
+			else {
+				$criterio = "%";
+			}
+			
+		}
+		else {
+			$criterio = $_POST['criterio'];
+		}
+		
 		
 		$query = "SELECT nombre,Descripcion,Ruta
 					 FROM documentos WHERE nombre like '$criterio%' ORDER BY nombre ASC";
@@ -52,8 +65,13 @@ session_start();
 						   <br />
 				</form>
 	<?php  
-		if(isset($_POST['criterio']))
-		{  
+		if(isset($_POST['criterio']) || !empty($_SESSION['verCriterio']))
+		{
+			if (!empty($_SESSION['verCriterio']))
+		{
+			$_SESSION['verCriterio']="";
+		}
+			  
   			while ($row = mysqli_fetch_assoc($result)) 	
 			{
 				echo "<div class=\"docs\">";								
@@ -66,8 +84,7 @@ session_start();
 	                <li><img src="images/icono_descargar.png" >     </li>
     	            <li><a href="editar.php?nombre=<?php echo $row['nombre']?>">
                     	<img src="images/icono_editar.png" > </a>       </li>
-                    	<?php echo $criterio;?>
-        	        <li><a href="eliminar.php?nombre=<?php echo $row['nombre'];?>">
+        	        <li><a href="eliminar.php?nombre=<?php echo $row['nombre']."&criterio=$criterio";?>">
                       	<img src="images/icono_eliminar.png" > </a> </li>
             	    <li><a href="<?php echo $row['Ruta']?>"> 
                        	<img src="images/icono_ver.png" ></a>       </li>

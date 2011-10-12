@@ -36,8 +36,8 @@ session_start();
 				
 				$_SESSION['verCriterio'] = $criterio;
 				
-				echo $criterio;
-				//header("Location: Ver.php");
+				//echo $criterio;
+				header("Location: Ver.php");
         
         ?>
    		</div><!--fin del div = main-->
