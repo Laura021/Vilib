@@ -45,7 +45,7 @@ session_start();
             
               <label>
 			    	<input type="radio" name="GpoBsqda" value="nControl" id="GpoBsqda_1" />
-				    N�mero Control
+				    Numero Control
 			  </label>
               
   		</form>
