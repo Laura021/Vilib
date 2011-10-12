@@ -15,6 +15,9 @@
 	a:hover {text-shadow: 0px 0px 12px rgba(240,182,34,1);
 	color: #FFFFFF;}
 	a:visited{color: #FFFFFF;}
+	a:focus{
+		outline:none;
+		text-shadow: 0px 0px 12px rgba(240,182,34,1)}
 
     #formulario {
 	position: static;
@@ -131,6 +134,14 @@
     _background:#A2B598;
     _filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#A2B598', EndColorStr='#C0C9BA');
 }
+
+.menu_button:focus{
+	outline:none;
+	-webkit-box-shadow: 0px 0px 20px rgba(34,221,240,.5);
+	-moz-box-shadow: 0px 0px 20px rgba(34,221,240,.5);
+	box-shadow:  0px 0px 20px rgba(34,221,240,.5);
+}
+
 
 .blue {
     border-color:#1D4253;
