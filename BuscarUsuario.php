@@ -5,9 +5,10 @@ session_start();
 	if(empty($_SESSION['access']))
 	{
 		header("Location: index.php");
+			
 	}
 	
-		include ("restriccion.php");
+	include ("restriccion.php");
 ?>
 
 <html>
