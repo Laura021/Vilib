@@ -105,7 +105,7 @@ git<html>
      <br />
      <br />
      <label id="titles">Contrase&ntildea:</label><br />
-     <input required placeholder="Incluye letras, num. y mayusculas." pattern="(^[0-9A-Za-z])" class="loginbox" name="txtContraseñaRegistro" type="password" id="txtContraseñaRegistro" />
+     <input required placeholder="Incluye letras, num. y mayusculas." pattern="(^(\w)*(([a-z]+[A-Z]+[\d]+)|([A-Z]+[a-z]+[\d]+)|([\d]+[a-z]+[A-Z]+)|([\d]+[A-Z]+[a-z]+))(\w)*)" class="loginbox" name="txtContraseñaRegistro" type="password" id="txtContraseñaRegistro" />
      <br />
      <br />
      <label id="titles">N&uacutemero de Control:</label><br />
