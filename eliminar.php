@@ -24,6 +24,7 @@ session_start();
 		
         <?php
 				$valor= $_GET['nombre'];
+				$criterio = $_GET['criterio'];
 			
         	    $qry="Delete FROM documentos WHERE Nombre ='$valor';";
 				
@@ -31,6 +32,11 @@ session_start();
 						or die("no se pudo contectar al servidor");
 			
 				$result=mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
+				
+				$_SESSION['verCriterio'] = $criterio;
+				
+				echo $criterio;
+				//header("Location: Ver.php");
         
         ?>
    		</div><!--fin del div = main-->

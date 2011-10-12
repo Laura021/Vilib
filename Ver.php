@@ -22,7 +22,8 @@ session_start();
 	if(isset($_POST['criterio']))
 	{
 		$criterio = $_POST['criterio'];
-
+		$_SESSION['verCriterio'] = $criterio;
+		
 		$query = "SELECT nombre,Descripcion,Ruta
 					 FROM documentos WHERE nombre like '$criterio%' ORDER BY nombre ASC";
 	
@@ -65,7 +66,8 @@ session_start();
 	                <li><img src="images/icono_descargar.png" >     </li>
     	            <li><a href="editar.php?nombre=<?php echo $row['nombre']?>">
                     	<img src="images/icono_editar.png" > </a>       </li>
-        	        <li><a href="eliminar.php?nombre=<?php echo $row['nombre']?>">
+                    	<?php echo $criterio;?>
+        	        <li><a href="eliminar.php?nombre=<?php echo $row['nombre'];?>">
                       	<img src="images/icono_eliminar.png" > </a> </li>
             	    <li><a href="<?php echo $row['Ruta']?>"> 
                        	<img src="images/icono_ver.png" ></a>       </li>
