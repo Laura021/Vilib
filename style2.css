@@ -303,7 +303,7 @@ input[type=checkbox],
     -webkit-border-radius: 2em; /* Make radios round */
   }
   
-  input[type=checkbox]:checked {
+  input[type=checkbox]:checked, input[type=radio]:checked{
    background: url("images/yes.png") no-repeat;
    background-position: top left;
    -webkit-background-size: 28px 28px; /* shrink high resolution background */
