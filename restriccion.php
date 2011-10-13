@@ -6,4 +6,5 @@
 	{
 		header("Location: faltaPermisos.php");
 	}
+	
 ?>

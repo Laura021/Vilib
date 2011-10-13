@@ -5,8 +5,12 @@ session_start();
 	if(empty($_SESSION['access']))
 	{
 		header("Location: index.php");
+		echo "no tengo sesion";
 	}
-		include ("restriccion.php");
+	
+	//header("Location: faltaPermisos.php");
+	//echo "me acabo de pasar el location";
+include ("restriccion.php");
 ?>
 <html>
 	<head>
@@ -16,7 +20,7 @@ session_start();
 	</head>
 	
     <body>
-
+    	
 		<div id="container">
 			<?php include ("cabecera.php");?>
             <?php include ("lateral.php"); ?>
