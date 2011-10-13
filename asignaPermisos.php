@@ -63,7 +63,7 @@ session_start();
     <div id="main">
     	
    
-    <form action="" name="permisos" method="post">
+    <form action="cambiaPermisos.php" name="permisos" method="post">
     	<label>Nombre: </label>
         <input type="text" id="txtNombre" value="<?php echo $row['Nombre']?>"  disabled="disabled"/>
         <br />
@@ -101,9 +101,8 @@ session_start();
 					}
         	
         	?>
-        <!--<input type="text" id="txtTipo" value="<?php echo $row['Tipo']?>" />-->
+        <
    		</select>
-   
    		<br />
    		<br/>
    		<label>Descripcion de los permisos</label>
@@ -156,8 +155,12 @@ session_start();
 		 /*Debemos tener la descripcion de los permiso*/
 		
    		?>
+   		<input type="hidden" id="txtId" name="txtId" value="<?php echo $row['N_Control']; ?>" />
+   		<input type="submit" id="btnCambia" value="cambia"/>
    		</div>
-   		</div><!-- fin del div de container--> 
+   		</div><!-- fin del div de container-->
+   		
+   		 
     </form>
 
 </body>
