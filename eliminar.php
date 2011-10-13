@@ -1,5 +1,5 @@
 <?php session_start(); 
-		echo "He iniciado sesion";
+		
 		
 	if(empty($_SESSION['access']))
 	{
@@ -7,13 +7,11 @@
 	}
 	
 	$usu=$_SESSION['tipo_usu'];
-	echo "<br/>";
-	echo "tipo de usuario ".$usu;
-	echo "<br/>";
+	
 	
 	if($usu == 3)
 	{
-		echo "estoy entrando al if";
+		
 		header("Location: faltaPermisos.php");
 	}
 	else
@@ -49,8 +47,8 @@
 				
 				$_SESSION['verCriterio'] = $criterio;
 				
-				//echo $criterio;
-		//		header("Location: Ver.php");
+				echo $criterio;
+				header("Location: Ver.php");
         
         ?>
    		</div><!--fin del div = main-->
