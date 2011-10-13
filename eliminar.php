@@ -1,16 +1,25 @@
-<?php
-session_start();
-
-//valida si existe una sesión, si no regresa a la pagina de login
+<?php session_start(); 
+		echo "He iniciado sesion";
+		
 	if(empty($_SESSION['access']))
 	{
 		header("Location: index.php");
-		echo "no tengo sesion";
 	}
 	
-	//header("Location: faltaPermisos.php");
-	//echo "me acabo de pasar el location";
-include ("restriccion.php");
+	$usu=$_SESSION['tipo_usu'];
+	echo "<br/>";
+	echo "tipo de usuario ".$usu;
+	echo "<br/>";
+	
+	if($usu == 3)
+	{
+		echo "estoy entrando al if";
+		header("Location: faltaPermisos.php");
+	}
+	else
+    {
+		
+	
 ?>
 <html>
 	<head>
@@ -20,7 +29,7 @@ include ("restriccion.php");
 	</head>
 	
     <body>
-    	
+		    	
 		<div id="container">
 			<?php include ("cabecera.php");?>
             <?php include ("lateral.php"); ?>
@@ -41,7 +50,7 @@ include ("restriccion.php");
 				$_SESSION['verCriterio'] = $criterio;
 				
 				//echo $criterio;
-				header("Location: Ver.php");
+		//		header("Location: Ver.php");
         
         ?>
    		</div><!--fin del div = main-->
@@ -49,28 +58,5 @@ include ("restriccion.php");
 
 </body>
 </html>
-	  
 
-		
-
-		
-	
-	  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php }?>
