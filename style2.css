@@ -179,6 +179,10 @@ label {
 	ul#checked {
 		list-style: none;
 	}
+	.listaPermisos
+	{
+		list-style: none;
+	}
 
 input {
 	padding-left: 10px;

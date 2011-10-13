@@ -116,7 +116,7 @@ session_start();
    		 {
    		 	echo "<label>Entre al fin del jefeeeee <label/>";?>
 			
-			<ul id="permiiiisos :3">
+			<ul class="listaPermisos">
 				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled" />Edicion de documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled" />Compartir documentos</li>
@@ -128,7 +128,7 @@ session_start();
 		 if($row['Id_tipo'] == 2)
    		 {
    		 	echo "<label>Entre al fin del docente <label/>";?>
-   		 	<ul id="permiiiisos :3">
+   		 	<ul class="listaPermisos">
 				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled" />Edicion de documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled" />Compartir documentos</li>
@@ -142,7 +142,7 @@ session_start();
    		 {
    		 	echo "<label>Entre al fin del alumno <label/>";?>
    		 		
-   		 	<ul id="permiiiisos :3">
+   		 	<ul class="listaPermisos">
 				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
 				<li><input type="checkbox"   disabled="disabled" />Edicion de documentos.</li>
 				<li><input type="checkbox"   disabled="disabled" />Compartir documentos</li>
