@@ -176,6 +176,10 @@ label {
 	text-shadow: 0px 1px 0px #343f55;
 }
 
+	ul#checked {
+		list-style: none;
+	}
+
 input {
 	padding-left: 10px;
 	padding-top:4px;
@@ -267,6 +271,39 @@ input[type=submit] {
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#718DA9), color-stop(100%,#415D79)); /* webkit */
 	cursor: pointer;
 }
+
+input[type=checkbox],
+ input[type=radio] {
+   padding: 0.5em;
+   font-size: 15px;
+   line-height: 1.2em;
+   width: 80%;
+   background: #fff;
+   background: url("images/no.png") no-repeat;
+   background-position: top left;
+   /*background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));*/
+   -webkit-appearance: none;
+   -webkit-border-radius: 0.5em;
+   display: inline-block;
+   font-size: 15px;
+   line-height: 1em;
+   margin: 0 0.25em 0 0;
+   padding: 0;
+   width: 24px;
+   height: 24px;
+   -webkit-border-radius: 0.25em;
+   vertical-align: text-top;
+ }
+
+ input[type=radio] {
+    -webkit-border-radius: 2em; /* Make radios round */
+  }
+  
+  input[type=checkbox]:checked {
+   background: url("images/yes.png") no-repeat;
+   background-position: top left;
+   -webkit-background-size: 28px 28px; /* shrink high resolution background */
+ }
 
 p {
 color: #2E2E2E;
