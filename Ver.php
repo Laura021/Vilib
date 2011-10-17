@@ -1,6 +1,14 @@
 <?php
 session_start();
 
+function obtenerExtensionFichero($str)
+	  {
+	  $txt="";
+	  $txt= explode(".", $str);
+	  $txt= end($txt);
+	  return $txt;
+	  }
+
 //valida si existe una sesi�n, si no regresa a la pagina de login
 	if(empty($_SESSION['access']))
 	{
@@ -18,7 +26,6 @@ session_start();
 <?php include ("conexion.php");?>
 
 <?php
-
 	if(isset($_POST['criterio']) || !empty($_SESSION['verCriterio']))
 	{
 		if(empty($_POST['criterio']))
@@ -86,6 +93,12 @@ session_start();
                     	<img src="images/icono_editar.png" > </a>       </li>
         	        <li><a href="eliminar.php?nombre=<?php echo $row['nombre']."&criterio=$criterio";?>">
                       	<img src="images/icono_eliminar.png" > </a> </li>
+                      	
+                      	<?php
+                      	echo obtenerExtensionFichero($row['Ruta']);
+                      	?>
+                      	
+                      	
             	    <li><a href="<?php echo $row['Ruta']?>"> 
                        	<img src="images/icono_ver.png" ></a>       </li>
                 </ul></div></div>

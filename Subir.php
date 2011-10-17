@@ -1,9 +1,12 @@
 <?php
+session_start();
 
-	  function obtenerExtensionFichero($str)
+function obtenerExtensionFichero($str)
 	  {
-	  	$txt="";
-	  return $txt=end(explode(".", $str));
+	  $txt="";
+	  $txt= explode(".", $str);
+	  $txt= end($txt);
+	  return $txt;
 	  }
 include ("conexion.php");
 
@@ -15,16 +18,13 @@ $ext=obtenerExtensionFichero($_FILES['file']['name']);
 
 $msj= "";
 
-//el $qry traera el nombre y l categoria del archivo.
-
-
 //validar el archivo y tamaño
-if ( $_FILES["file"]["size"] < 10000000)
+if ( $_FILES["file"]["size"] < 19000000)
    {
   
 	  if ($_FILES["file"]["error"] > 0)
     	{
-		    $msj= "Archivo demasiado grande, Tamaño Maximo 10 MB <br /> 
+		    $msj= "Archivo demasiado grande, Tamaño Maximo 20 MB <br /> 
 		    Código de error : " . $_FILES["file"]["error"] . "<br />";
     	}
 	  else
@@ -36,7 +36,7 @@ if ( $_FILES["file"]["size"] < 10000000)
 			echo "Extension: ".$ext. "<br />";*/
 	//verifica si existe el archivo en la carpeta img.
     
-			if (file_exists("img/" . $_FILES["file"]["name"]) )
+			if (file_exists("docs/" . $_FILES["file"]["name"]) )
       			{
 		    	  $msj="El archivo ". $_FILES["file"]["name"] . " - - - - > ya existe. ";
       			}
@@ -63,15 +63,10 @@ if ( $_FILES["file"]["size"] < 10000000)
   	}//fin if tamaño
 	else
   	{
-		  $msj= "Archivo invalido";
+		  $msj= "Archivo demasiado grande el limite es de 20Mb";
   	}
 		  //echo "<br />";
 		  //echo "<a href='SubirDoc.php'>Regresar a la pagina anterior<a />";
-
-?>
-
-<?php
-session_start();
 
 //valida si existe una sesión, si no regresa a la pagina de login
 	if(empty($_SESSION['access']))
