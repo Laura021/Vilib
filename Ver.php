@@ -20,6 +20,22 @@ function obtenerExtensionFichero($str)
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<link rel="stylesheet" href="style2.css" media="screen"/>
+		<link rel="stylesheet" href="javascript/shadowbox/shadowbox.css" media="screen"/>
+		<script type="text/javascript" src="javascript/shadowbox/shadowbox.js"></script>
+		<script type="text/javascript">
+		Shadowbox.init();
+		
+		function notSupported()
+		{
+			Shadowbox.open({
+        content:    '<head><link rel="stylesheet" href="style2.css" media="screen"/></head> <div class="notSupported"></div>Documento no soportado por el visor online de archivos \n Se ha descargado en su defecto.',
+        player:     "html",
+        title:      "Visor Online Vilib",
+        height:     350,
+        width:      350
+    });
+		}		
+		</script>
 		<title>Ver Documento</title>
 	</head>
 
@@ -95,11 +111,18 @@ function obtenerExtensionFichero($str)
                       	<img src="images/icono_eliminar.png" > </a> </li>
                       	
                       	<?php
-                      	echo obtenerExtensionFichero($row['Ruta']);
+                      	$extension = obtenerExtensionFichero($row['Ruta']);
+                      	if( $extension== "png" || $extension == "jpg" || $extension == "jpeg"
+                      		|| $extension == "gif")
+						{
+							echo "<li><a rel=\"shadowbox\" href=\"".$row['Ruta']."\">";
+						}
+						else 
+						{
+							echo "<li><a onClick=\"notSupported()\" href=\"".$row['Ruta']."\">";
+						}
                       	?>
-                      	
-                      	
-            	    <li><a href="<?php echo $row['Ruta']?>"> 
+
                        	<img src="images/icono_ver.png" ></a>       </li>
                 </ul></div></div>
                 <br />
