@@ -29,13 +29,14 @@ session_start();
 		<form action='Subir.php' method='post' enctype="multipart/form-data" name="formulario" 
         	id="formulario">
 
-			<label>Seleccione un documento para continuar</label>
+			<label>Subir un Documento.</label>
 					<br />
 					<br />
 
-			<label name='Nombre'> Nombre </label>
-			<input name='txtNombre' id='txtNombre' type='text' maxlength='50' />
+			<label name='Nombre'> Nombre: </label>
+			<input name='txtNombre' id='txtNombre' type='text' pattern="\w*" required  maxlength='50' />
 			<br />
+			<br/>
 			
 			<?php include("conexion.php");?>
 
@@ -49,7 +50,7 @@ session_start();
 			
 				$result=mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 
-				echo "<label name='Dpto'> Departamento </label>";
+				echo "<label name='Dpto'> Departamento: </label>";
 				echo "<select name='listaDpto'>";
 
 				while($row=mysqli_fetch_array($result))
@@ -67,7 +68,7 @@ session_start();
 			
 				$result=mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 
-				echo "<label name ='Categorias'> Categoria </label>";
+				echo "<label name ='Categorias'> Categoría: </label>";
 				echo "<select name='listaCat'>";
 
 				while($row=mysqli_fetch_array($result))
@@ -82,11 +83,15 @@ session_start();
 		<br />
 		<br />
 
-		<label name='descripcion'>Descripcion</label>
-		
+		<label name='descripcion'>Descripci&oacuten:</label>
+		</br>
+		</br>
         <textarea name='txtDescripcion' cols='' rows=''></textarea>
 		<br />
 		<br />
+        
+        <label>Selecciona un documento para continuar:</label>
+        <br />
         
 		<input name='file' type='file' id='file'  value='Selecciona un Archivo'  />
 		<br />

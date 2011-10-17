@@ -127,8 +127,10 @@ session_start();
 		<br />
 		<br />
 		
+		
         <input name='btnCambio' type='submit' id='btnCambio' class='menu_button blue' 
         	   value="Cambiar"  />
+        
 	   </form>
     
 			
