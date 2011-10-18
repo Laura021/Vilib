@@ -1,9 +1,9 @@
 ----Vilib----(Virtual Library)
 
-Software hecho por estudiantes del Instituto Tecnologico de Saltillo
-con el fin de organizar documentos del departamento de sistemas e informatica.
+Software desarrollado por estudiantes del Instituto Tecnologico de Saltillo
+con el fin de organizar documentos del Departamento de Sistemas e Informática.
 
-Contruido usando los siguientes lenguajes de programacion:
+Construido utilizando los siguientes lenguajes de programacion:
 
 +PHP
 +HTML
@@ -13,4 +13,4 @@ Contruido usando los siguientes lenguajes de programacion:
 
 En ambientes xampp y lampp.
 
-El proyecto se encuentra en fase beta. 
+El proyecto se encuentra en fase beta.
