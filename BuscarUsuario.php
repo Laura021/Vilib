@@ -77,32 +77,45 @@ session_start();
 					//Aqui iba result.
 			    	$result = mysqli_query($conexion,$query) 
 							or die("no se pudo realizar la consulta");
-							
+					
+					//echo "count  result".count($result);
+					
+					if(mysqli_num_rows($result)==0)
+					{
+						echo "Nada que mostrar";	
+					}
+					//echo "mysql ".mysqli_num_rows($result);
+					
+								
 					mysqli_close($conexion);
+					
 				}// fin de if criterio es set.
 				
 				//aqui meteremos el resto de la consulta que escribe los resultados.
 				if(isset($_POST['criterio']))
 				{
 				//Ciclo para evitar que te muestre los warnings
+				
   					while ($row = mysqli_fetch_assoc($result)) 
-					{	
+					{
+						
 			?>
+				
 			<!--<tr>
 			    <td>-->
 					<li>
                     	<a href="asignaPermisos.php?id=<?php echo $row['N_Control']?>">
-							<?php echo "".$row['N_Control']."\t
-							\t".$row['Nombre']." ".$row['Paterno']." ".$row['Materno']. "<hr>"?>
+							 <?php echo "".$row['N_Control']."\t
+							\t".$row['Nombre']." ".$row['Paterno']." ".$row['Materno']. "<hr>" ?>
                     	</a>
                     </li>
                 <!--</td>
     		</tr>-->
-  			<?php     
+  			 <?php     
 					} //fin del while
 					
         		}//fin del if
-			?>
+			 ?>
             </ul>
 <!--</table>-->
 
