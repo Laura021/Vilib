@@ -1,11 +1,16 @@
-bla
-nomas testeando
+----Vilib----(Virtual Library)
 
-Cumbia Poder.
+Software hecho por estudiantes del Instituto Tecnologico de Saltillo
+con el fin de organizar documentos del departamento de sistemas e informatica.
 
+Contruido usando los siguientes lenguajes de programacion:
 
-¡Funciona por favor!
++PHP
++HTML
++Javascript
++CSS
++MySql
 
-probando desde la cuenta de laura, la programadora mas hermosa de todo el mundo <3
+En ambientes xampp y lampp.
 
-esta nomas es una prueba desde mi lap con ubuntu el mejor sistema operativo del mundo de los narwhales.
+El proyecto se encuentra en fase beta. 
