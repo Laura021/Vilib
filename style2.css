@@ -176,6 +176,31 @@ background-color:#a6c5dd;
 	padding: 2px 10px 5px 10px;
 }
 
+.listaUsuarios{
+	size: 18px;
+	text-shadow: 0px 0px 10px rgba(0,0,0,.7);
+	list-style: none;
+}
+
+.movingText:active,.movingText:link,.movingText:visited
+{
+	color: rgba(95,199,235,1);
+	transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+}
+
+.movingText:focus,.movingText:hover
+{
+	transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	color: rgba(241,196,54,1);
+	text-shadow: 0px 0px 7px rgba(241,196,54,.6);
+	padding-left: 10px;
+}
+
+
 label {
 	clear: left; margin: 11px 20px 0 0; width: 95px;
 	font-size: 16px; color: #f2f2f2;

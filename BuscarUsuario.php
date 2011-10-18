@@ -103,10 +103,10 @@ session_start();
 				
 			<!--<tr>
 			    <td>-->
-					<li>
-                    	<a href="asignaPermisos.php?id=<?php echo $row['N_Control']?>">
-							 <?php echo "".$row['N_Control']."\t
-							\t".$row['Nombre']." ".$row['Paterno']." ".$row['Materno']. "<hr>" ?>
+					<li class="listaUsuarios">
+                    	<a class="movingText" href="asignaPermisos.php?id=<?php echo $row['N_Control']?>">
+							 <?php echo "".$row['N_Control']."  \t
+							\t".$row['Nombre']." ".$row['Paterno']." ".$row['Materno'] ?>
                     	</a>
                     </li>
                 <!--</td>
