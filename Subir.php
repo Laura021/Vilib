@@ -10,13 +10,30 @@ function obtenerExtensionFichero($str)
 	  }
 include ("conexion.php");
 
+$patronNombre = "((\w)+)";
 $nombre=$_POST['txtNombre'];
 $dpto=$_POST['listaDpto'];
 $cat=$_POST['listaCat'];
 $descr=$_POST['txtDescripcion'];
 $ext=obtenerExtensionFichero($_FILES['file']['name']);
-
+$bien =1;
 $msj= "";
+
+//Validar Textarea y Nombre.
+
+if(strlen($descr)==0){
+	echo "Por favor incluye una descripción de tu archivo.";
+	$bien=0;
+}
+
+if(strlen($nombre)==0){
+	echo "Por favor incluye un nombre para tu archivo.";
+	$bien=0;
+}else
+	if(!preg_match($patronNombre, $nombre)){
+		echo "Por favor introduce un formato válido para el nombre del archivo.";
+		$bien=0;
+	}
 
 //validar el archivo y tamaño
 if ( $_FILES["file"]["size"] < 19000000)
@@ -35,6 +52,8 @@ if ( $_FILES["file"]["size"] < 19000000)
 		    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
 			echo "Extension: ".$ext. "<br />";*/
 	//verifica si existe el archivo en la carpeta img.
+	
+	if($bien==1){
     
 			if (file_exists("docs/" . $_FILES["file"]["name"]) )
       			{
@@ -58,8 +77,8 @@ if ( $_FILES["file"]["size"] < 19000000)
 						  
       			 }//fin else de poner en la carpeta
 				 
-    		}//else error
-			
+    		}//Fin if validación.
+    	}//Fin si no hay error de tamaño.
   	}//fin if tamaño
 	else
   	{
