@@ -1,4 +1,5 @@
 body {
+	color:white;
 margin:5px 2px 2px 5px; 
 background: url(vilibbg.jpg) no-repeat;
 background-color: #0a1117;
@@ -36,6 +37,11 @@ a:link {text-decoration:none;}
     	left: 50%;
     	margin-top: -200px;
     	margin-left: -100px;
+	}
+	
+	.notSupported
+	{
+    	size: 20px;
 	}
 	
 #container {
