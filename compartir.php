@@ -10,5 +10,7 @@
 											
 	$result = mysqli_query($conexion,$query) 
 							or die("no se pudo realizar la consulta");
+	
+	header("Location: Ver.php");
 							
 ?>
