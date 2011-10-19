@@ -3,6 +3,7 @@
     $idDoc=$_GET['id'];
 	
 	include ("conexion.php");
+	include ("restriccion.php");
 	 
 	 $query = "UPDATE documentos 
 	           SET Compartir='1'
