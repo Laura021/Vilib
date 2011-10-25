@@ -128,7 +128,7 @@
      <br />
      <br />
      <label id="titles">Mail:</label><br />
-     <input required placeholder="ej@dominio.com" class="loginbox" name="txtMail" type="text" id="txtMa" pattern="^[\w-\.]+@([\w-]+\.)[\w-]{2,4}$" />
+     <input required placeholder="ej@dominio.com" class="loginbox" name="txtMail" type="email" id="txtMa" pattern="^[\w-\.]+@([\w-]+\.)[\w-]{2,4}$" />
      <br />
      <br />
      
