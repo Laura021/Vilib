@@ -75,8 +75,8 @@
 			<?
 			$ningunError=false;
 		}else
-		if(strlen($numC)<8){
-			echo "Tu número de control debe contener al menos 8 caracteres.";
+		if(strlen($numC)!=8){
+			echo "Tu número de control debe contener 8 números.";
 			?>
 			<a href="registro.php" class="menu_button blue">Volver al formulario.</a>
 			<?
@@ -120,7 +120,7 @@
      <br />
      <br />
      <label id="titles">N&uacutemero de Control:</label><br />
-     <input required placeholder="Utiliza solo numeros." class="loginbox" name="txtNC" type="text" id="txtNumC" pattern="[\d]{8,10}" />
+     <input required placeholder="Utiliza solo numeros." class="loginbox" name="txtNC" type="text" id="txtNumC" pattern="[\d]{8}" />
      <br />
      <br />
      <label id="titles">Edad:</label><br />
@@ -128,7 +128,7 @@
      <br />
      <br />
      <label id="titles">Mail:</label><br />
-     <input required placeholder="What lol?" class="loginbox" name="txtMail" type="email" id="txtMa" />
+     <input required placeholder="ej@dominio.com" class="loginbox" name="txtMail" type="text" id="txtMa" pattern="^[\w-\.]+@([\w-]+\.)[\w-]{2,4}$" />
      <br />
      <br />
      
