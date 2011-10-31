@@ -1,5 +1,4 @@
 body {
-	color:white;
 margin:5px 2px 2px 5px; 
 background: url(vilibbg.jpg) no-repeat;
 background-color: #0a1117;
@@ -25,6 +24,16 @@ a:link {text-decoration:none;}
     font-size: 17;
     display: inline-block;
     
+    }
+    
+    .shadowBoxMessage
+    {
+     size: 24px;
+     background-color: black;
+	color: white;
+	padding-left: 20px;
+	padding-top: 50px;
+	height: 100px;
     }
 
 .terminadoTXT{

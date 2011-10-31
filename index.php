@@ -7,9 +7,21 @@
 ?>
 <html>
 	<head>
+		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		
+		
+		
 		<link rel="stylesheet" href="style.css" media="screen"/>
-		<title>Pagina LogIn</title>
+		<title>Página LogIn</title>
+		
+		
+		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="ie.css" />
+			<title>Página LogIn InternetExplorer</title>
+		<![endif]-->
+		
 	</head>
     
 	<body>
@@ -64,11 +76,11 @@
     <form name="form1" method="post" action="index.php">
      
      <label id="titles">Usuario</label><br />
-     <input  class="loginbox" name="txtUsuario" type="text" id="txtUsuario" />
+     <input  class="loginbox" name="txtUsuario" type="text" id="txtUsuario" required />
      <br />
      <br />
      <label id="titles">Contraseña</label><br />
-     <input class="loginbox" name="txtContraseña" type="password" id="txtContraseña" />
+     <input class="loginbox" name="txtContraseña" type="password" id="txtContraseña" required />
      <br />
      <br />
      

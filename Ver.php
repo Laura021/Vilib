@@ -23,18 +23,47 @@ function obtenerExtensionFichero($str)
 		<link rel="stylesheet" href="javascript/shadowbox/shadowbox.css" media="screen"/>
 		<script type="text/javascript" src="javascript/shadowbox/shadowbox.js"></script>
 		<script type="text/javascript">
-		Shadowbox.init();
+		
+		var sbMimeMap = { 
+            img:        ['png', 'jpg', 'jpeg', 'gif', 'bmp'], 
+            swf:        ['swf'], 
+            flv:        ['flv'], 
+            qt:         ['dv', 'mov', 'moov', 'movie', 'mp4'], 
+            wmp:        ['asf', 'wm', 'wmv'], 
+            qtwmp:      ['avi', 'mpg', 'mpeg'], 
+            iframe:       ['asp', 'aspx', 'cgi', 'cfm', 'htm', 'html', 'pl', 'php', 
+                        'php3', 'php4', 'php5', 'phtml', 'rb', 'rhtml', 'shtml', 
+                        'txt', 'vbs', 'java','cs','xml','pdf'] 
+		}
+		
+		Shadowbox.init( 
+						{ 
+                        loadingImage:"loading.gif" 
+                       , handleUnsupported:  'notsupported()' 
+                       , ext: sbMimeMap 
+                       }
+			); 
 		
 		function notSupported()
 		{
 			Shadowbox.open({
-        content:    '<head><link rel="stylesheet" href="style2.css" media="screen"/></head> <div class="notSupported"></div>Documento no soportado por el visor online de archivos \n Se ha descargado en su defecto.',
+        content:    '<div class="shadowBoxMessage">Documento no soportado por el visor online de archivos \n Puedes descargarlo para poder visualizarlo desde tu dispositivo.</div>',
         player:     "html",
         title:      "Visor Online Vilib",
-        height:     350,
+        height:     150,
         width:      350
     });
-		}		
+		}	
+		
+		function defaultType()
+		{
+			Shadowbox.open({ content:  url 
+                         , type:       "iframe" 
+                         , title:      sbTitle
+                         , height:     500
+                         , width:      300 
+                         });
+		}	
 		</script>
 		<title>Ver Documento</title>
 	</head>
@@ -59,18 +88,9 @@ function obtenerExtensionFichero($str)
 			$criterio = $_POST['criterio'];
 		}
 		
-		//mi shaparro tiene razon siempreeee :3
 		
-		if($_SESSION['tipo_usu']==3)
-		{
-			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
-			          FROM documentos WHERE Nombre like '$criterio%' AND Compartir='1' ORDER BY nombre ASC";
-		}
-		else
-		{
-			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
+		$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
 					 FROM documentos WHERE nombre like '$criterio%' ORDER BY nombre ASC";
-		}
 	
 		$result = mysqli_query($conexion,$query) or die("no se pudo realizar la consulta");
 	
@@ -114,9 +134,8 @@ function obtenerExtensionFichero($str)
 				<ul class="listaDocs">                     
                     <li><a href="compartir.php?id=<?php echo $row['Id_Doc']?>">
                     	<img src="images/icono_compartir.png" ></a> </li>
-                    	
-	                <li><a href="<?php echo $row['Ruta'];?>">
-	                	<img src="images/icono_descargar.png" ></a> </li>
+	                <li><a <?php echo "href=\"".$row['Ruta']."\""; ?> >
+	                	<img src="images/icono_descargar.png" > </a> </li>
     	            <li><a href="editar.php?nombre=<?php echo $row['nombre']?>">
                     	<img src="images/icono_editar.png" > </a>       </li>
         	        <li><a href="eliminar.php?nombre=<?php echo $row['nombre']."&criterio=$criterio";?>">
@@ -125,14 +144,25 @@ function obtenerExtensionFichero($str)
                       	<?php
                       	$extension = obtenerExtensionFichero($row['Ruta']);
                       	if( $extension== "png" || $extension == "jpg" || $extension == "jpeg"
-                      		|| $extension == "gif")
-						{
-							echo "<li><a rel=\"shadowbox\" href=\"".$row['Ruta']."\">";
-						}
-						else 
-						{
-							echo "<li><a onClick=\"notSupported()\" href=\"".$row['Ruta']."\">";
-						}
+                      		|| $extension == "gif" || $extension == "bmp" || $extension == "swf"
+                      		|| $extension == "flv" || $extension == "dv" || $extension == "mov"
+                      		|| $extension == "moov" || $extension == "movie" || $extension == "mp4"
+                      		|| $extension == "asf" || $extension == "wm" || $extension == "wmv"
+                      		|| $extension == "avi" || $extension == "mpg" || $extension == "mpeg"
+                      		|| $extension == "htm" || $extension == "html" || $extension == "xml"
+                      		|| $extension == "asp" || $extension == "aspx" || $extension == "cgi"
+                      		|| $extension == "pl" || $extension == "php" || $extension == "php3"
+                      		|| $extension == "php4" || $extension == "php5" || $extension == "phtml"
+                      		|| $extension == "rb" || $extension == "rhtml" || $extension == "shtml"
+                      		|| $extension == "txt" || $extension == "vbs" || $extension == "java"
+                      		|| $extension == "cs" || $extension == "pdf")
+							{
+								echo "<li><a rel=\"shadowbox\" onClick=\"defaultType()\" href=\"".$row['Ruta']."\" >";
+							}
+						else
+							{
+								echo "<li><a rel=\"shadowbox\" onClick=\"notSupported()\" href=\"".$row['Ruta']."\" >";
+							}
                       	?>
 
                        	<img src="images/icono_ver.png" ></a>       </li>
