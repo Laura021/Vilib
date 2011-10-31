@@ -59,9 +59,18 @@ function obtenerExtensionFichero($str)
 			$criterio = $_POST['criterio'];
 		}
 		
+		//mi shaparro tiene razon siempreeee :3
 		
-		$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
+		if($_SESSION['tipo_usu']==3)
+		{
+			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
+			          FROM documentos WHERE Nombre like '$criterio%' AND Compartir='1' ORDER BY nombre ASC";
+		}
+		else
+		{
+			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
 					 FROM documentos WHERE nombre like '$criterio%' ORDER BY nombre ASC";
+		}
 	
 		$result = mysqli_query($conexion,$query) or die("no se pudo realizar la consulta");
 	
@@ -105,7 +114,9 @@ function obtenerExtensionFichero($str)
 				<ul class="listaDocs">                     
                     <li><a href="compartir.php?id=<?php echo $row['Id_Doc']?>">
                     	<img src="images/icono_compartir.png" ></a> </li>
-	                <li><img src="images/icono_descargar.png" >     </li>
+                    	
+	                <li><a href="<?php echo $row['Ruta'];?>">
+	                	<img src="images/icono_descargar.png" ></a> </li>
     	            <li><a href="editar.php?nombre=<?php echo $row['nombre']?>">
                     	<img src="images/icono_editar.png" > </a>       </li>
         	        <li><a href="eliminar.php?nombre=<?php echo $row['nombre']."&criterio=$criterio";?>">
