@@ -93,7 +93,17 @@ function obtenerExtensionFichero($str)
 					 FROM documentos WHERE nombre like '$criterio%' ORDER BY nombre ASC";
 	
 		$result = mysqli_query($conexion,$query) or die("no se pudo realizar la consulta");
-	
+		
+		
+		if(mysqli_num_rows($result)== 0)
+		{
+			$MSG="Nada que mostrar";
+			echo $MSG;	
+		}else
+		{
+			$MSG=" ";
+		}
+		
 		mysqli_close($conexion);
 	}
 ?>
@@ -123,9 +133,10 @@ function obtenerExtensionFichero($str)
 		{
 			$_SESSION['verCriterio']="";
 		}
-			  
+			echo " ".$MSG;
   			while ($row = mysqli_fetch_assoc($result)) 	
 			{
+				
 				echo "<div class=\"docs\">";								
 				echo "<span  class=\"tituloDoc\">".$row['nombre']." </span><br /><hr>";
 				echo "Descripcion: ".$row['Descripcion']."<br />";
