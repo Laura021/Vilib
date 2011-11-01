@@ -136,7 +136,7 @@ function obtenerExtensionFichero($str)
 			echo " ".$MSG;
   			while ($row = mysqli_fetch_assoc($result)) 	
 			{
-				
+				 
 				echo "<div class=\"docs\">";								
 				echo "<span  class=\"tituloDoc\">".$row['nombre']." </span><br /><hr>";
 				echo "Descripcion: ".$row['Descripcion']."<br />";
