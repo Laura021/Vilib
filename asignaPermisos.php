@@ -53,6 +53,7 @@ session_start();
 	 
 	$row = mysqli_fetch_assoc($result);
 	
+	
 	$qry2="SELECT * FROM tipo_usuario";
 	
 	$resultado = mysqli_query($conexion,$qry2) or die ("no se pudo realizar la consulta 2");
@@ -94,11 +95,17 @@ session_start();
 										.$row2["Nombre"]. 
 							 " </option> ";
 					}
-					else
+					else if($_SESSION['tipo_usu']==1)
 					{echo " <option value='".$row2["Id_tipo"]."'> "  
 										.$row2["Nombre"]. 
 							     " </option> ";				
 					}
+			else if ($_SESSION['tipo_usu']==2 && $row2["Id_tipo"]>=2)
+			{
+				echo " <option value='".$row2["Id_tipo"]."'> "  
+										.$row2["Nombre"]. 
+							     " </option> ";	
+			}
         	
         	?>
         <
