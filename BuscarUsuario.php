@@ -1,11 +1,8 @@
 <?php
 session_start();
-
-//valida si existe una sesi�n, si no regresa a la pagina de login
 	if(empty($_SESSION['access']))
 	{
-		header("Location: index.php");
-			
+		header("Location: index.php");	
 	}
 	
 	include ("restriccion.php");
@@ -62,7 +59,7 @@ session_start();
 										
 					if($tipo =="nombre")
 					{
-							$query = "SELECT N_Control,Nombre,Paterno,Materno 
+							$query = "SELECT N_Control,Nombre,Paterno,Materno,Id_tipo 
 										FROM usuarios WHERE Nombre like '$criterio%'
 										OR Paterno like '$criterio%'
 										OR Materno like '$criterio%'
@@ -70,7 +67,7 @@ session_start();
 					}
 					else if($tipo == "nControl")
 					{
-						    $query = "SELECT N_Control,Nombre,Paterno,Materno
+						    $query = "SELECT N_Control,Nombre,Paterno,Materno,Id_tipo
 										FROM usuarios WHERE N_Control like '%$criterio%' 
 											ORDER BY nombre ASC";
 					}
@@ -98,20 +95,31 @@ session_start();
 				
   					while ($row = mysqli_fetch_assoc($result)) 
 					{
-						
-			?>
-				
-			<!--<tr>
-			    <td>-->
+						if($_SESSION['tipo_usu']==1)
+						{ ?>
 					<li class="listaUsuarios">
                     	<a class="movingText" href="asignaPermisos.php?id=<?php echo $row['N_Control']?>">
 							 <?php echo "".$row['N_Control']."  \t
 							\t".$row['Nombre']." ".$row['Paterno']." ".$row['Materno'] ?>
                     	</a>
                     </li>
-                <!--</td>
-    		</tr>-->
-  			 <?php     
+  			 <?php		}
+						else if($_SESSION['tipo_usu']==2)  
+						{
+							if(($row['Id_tipo']>=2) &&($row['N_Control']!= $_SESSION['control']))
+							{
+							?>
+						<li class="listaUsuarios">
+                    	<a class="movingText" href="asignaPermisos.php?id=<?php echo $row['N_Control']?>">
+							 <?php echo "".$row['N_Control']."  \t
+							\t".$row['Nombre']." ".$row['Paterno']." ".$row['Materno'] ?>
+                    	</a>
+                    </li>
+						
+							
+						<?php
+							} 
+						}  
 					} //fin del while
 					
         		}//fin del if

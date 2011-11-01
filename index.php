@@ -54,13 +54,14 @@
 			if(count($row))
 			{
 	  		
-				$qry="SELECT Nombre,Paterno,Id_tipo FROM usuarios WHERE N_Control='$usuario'";
+				$qry="SELECT Nombre,Paterno,Id_tipo,N_Control FROM usuarios WHERE N_Control='$usuario'";
 				$result=mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 				$row=mysqli_fetch_assoc($result);
 		  	 
 	  			$_SESSION['access'] = true;
 				$_SESSION['usuario']=$row['Nombre']." ".$row['Paterno'];
 	  			$_SESSION['tipo_usu']=$row['Id_tipo'];
+				$_SESSION['control']=$row['N_Control'];
 			  	header("Location: Inicio.php");
 	
  	  		}else{
