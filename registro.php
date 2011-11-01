@@ -115,20 +115,20 @@
      <input required placeholder="Max. 30 caracteres." class="loginbox" name="txtMaternoRegistro" type="text" id="txtMaternoRegistro" />
      <br />
      <br />
-     <label id="titles">Contrase&ntildea:</label><br />
+     <label id="titles">Contrase&ntildea</label><br />
      <input  required placeholder="Incluye letras, num. y mayusculas." pattern="(^((\w)*(([a-z]+[A-Z]+[\d]+)|([A-Z]+[a-z]+[\d]+)|([\d]+[a-z]+[A-Z]+)|([\d]+[A-Z]+[a-z]+))(\w)*))" class="loginbox" name="txtContraseñaRegistro" type="password" id="txtContraseñaRegistro" />
      <br />
      <br />
      <label id="titles">N&uacutemero de Control:</label><br />
-     <input required placeholder="Utiliza solo numeros." class="loginbox" name="txtNC" type="text" id="txtNumC" pattern="[\d]{8}" />
+     <input required  placeholder="Utiliza solo numeros." maxlength="8" class="loginbox" name="txtNC" type="text" id="txtNumC" pattern="[\d]{8}" />
      <br />
      <br />
      <label id="titles">Edad:</label><br />
-     <input required placeholder="Utiliza solo numeros" class="loginbox" name="txtEdad" type="text" id="txtEd" pattern="[\d]{2}"/>
+     <input required placeholder="Utiliza solo numeros" maxlength="2" class="loginbox" name="txtEdad" type="text" id="txtEd" pattern="[\d]{2}"/>
      <br />
      <br />
      <label id="titles">Mail:</label><br />
-     <input required placeholder="ej@dominio.com" class="loginbox" name="txtMail" type="email" id="txtMa" pattern="^[\w-\.]+@([\w-]+\.)[\w-]{2,4}$" />
+     <input required placeholder="ej@dominio.com" class="loginbox" name="txtMail" type="email" id="txtMa" pattern="^[\w-\.]+@([\w-]+\.){2,4}\w{2,3}$" />
      <br />
      <br />
      
