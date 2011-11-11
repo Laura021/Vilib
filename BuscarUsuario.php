@@ -97,12 +97,13 @@ session_start();
 					{
 						if($_SESSION['tipo_usu']==1)
 						{ ?>
-					<li class="listaUsuarios">
-                    	<a class="movingText" href="asignaPermisos.php?id=<?php echo $row['N_Control']?>">
+						<li class="listaUsuarios">
+                    		<a class="movingText" href="asignaPermisos.php?id=<?php echo $row['N_Control']?>">
 							 <?php echo "".$row['N_Control']."  \t
 							\t".$row['Nombre']." ".$row['Paterno']." ".$row['Materno'] ?>
-                    	</a>
-                    </li>
+                    		</a>
+                    	</li>
+                    	
   			 <?php		}
 						else if($_SESSION['tipo_usu']==2)  
 						{
@@ -110,11 +111,11 @@ session_start();
 							{
 							?>
 						<li class="listaUsuarios">
-                    	<a class="movingText" href="asignaPermisos.php?id=<?php echo $row['N_Control']?>">
+                    		<a class="movingText" href="asignaPermisos.php?id=<?php echo $row['N_Control']?>">
 							 <?php echo "".$row['N_Control']."  \t
 							\t".$row['Nombre']." ".$row['Paterno']." ".$row['Materno'] ?>
-                    	</a>
-                    </li>
+                    		</a>
+                    	</li>
 						
 							
 						<?php

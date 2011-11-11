@@ -8,7 +8,12 @@ session_start();
 		
 	}
 	
-	include ("restriccion.php");
+	if($_SESSION['tipo_usu']==3)
+	{
+		header("Location: faltaPermisos.php");
+	}
+
+	//include ("restriccion.php");
 ?>
 <html>
 	<head>
