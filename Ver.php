@@ -97,7 +97,7 @@ function obtenerExtensionFichero($str)
 			$criterio = $_POST['criterio'];
 		}
 		
-		if($_SESSION['tipo_usu']==3)
+		if($_SESSION['tipo_usu']==3 || $_SESSION['tipo_usu']==4)
 		{
 			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
 					 FROM documentos 
