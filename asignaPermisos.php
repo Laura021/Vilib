@@ -121,10 +121,10 @@ session_start();
 		 
    		 if($row['Id_tipo'] == 1)
    		 {
-   		 	echo "<label>Entre al fin del jefeeeee <label/>";?>
-			
+   		 ?>	
 			<ul class="listaPermisos">
-				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
+				<li><input type="checkbox"  checked="checked" disabled="disables" />Subir documentos.</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled" />Visualizacion de documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled" />Edicion de documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled" />Compartir documentos</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled" />Eliminar documentos</li>
@@ -134,8 +134,9 @@ session_start();
    		 <?php }
 		 if($row['Id_tipo'] == 2)
    		 {
-   		 	echo "<label>Entre al fin del docente <label/>";?>
+   		 ?>
    		 	<ul class="listaPermisos">
+				<li><input type="checkbox"  checked="checked" disabled="disables" />Subir documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled" />Edicion de documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled" />Compartir documentos</li>
@@ -147,9 +148,10 @@ session_start();
    		 <?php }
 		 if($row['Id_tipo'] == 3)
    		 {
-   		 	echo "<label>Entre al fin del alumno <label/>";?>
+   		 ?>
    		 		
    		 	<ul class="listaPermisos">
+   		 		<li><input type="checkbox"  disabled="disables" />Subir documentos.</li>
 				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
 				<li><input type="checkbox"   disabled="disabled" />Edicion de documentos.</li>
 				<li><input type="checkbox"   disabled="disabled" />Compartir documentos</li>
@@ -160,7 +162,22 @@ session_start();
 			
    		 <?php }
 		 /*Debemos tener la descripcion de los permiso*/
-		
+		if($row['Id_tipo']==4)
+		{
+			
+   		?>
+   		
+   			<ul class="listaPermisos">
+   				<li><input type="checkbox"  checked="checked" disabled="disables" />Subir documentos.</li>
+				<li><input type="checkbox"  checked="checked" disabled="disabled"/>Visualizacion de documentos.</li>
+				<li><input type="checkbox"   disabled="disabled" />Edicion de documentos.</li>
+				<li><input type="checkbox"   disabled="disabled" />Compartir documentos</li>
+				<li><input type="checkbox"   disabled="disabled" />Eliminar documentos</li>
+				<li><input type="checkbox"   disabled="disabled" />Asignar permisos a usuarios</li>
+			</ul>
+		<?php 
+		}
+   		
    		?>
    		<input type="hidden" id="txtId" name="txtId" value="<?php echo $row['N_Control']; ?>" />
    		<input type="submit" id="btnCambia" value="cambia"/>
