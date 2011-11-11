@@ -63,7 +63,16 @@ function obtenerExtensionFichero($str)
                          , height:     500
                          , width:      300 
                          });
-		}	
+		}
+		
+		
+	function deleteBox(a,b)
+	{
+		var x=window.confirm(" ¿ Deseas eliminar el archivo?")
+		if (x)
+			window.location= "eliminar.php?nombre="+a+"&criterio="+b
+	}
+			
 		</script>
 		<title>Ver Documento</title>
 	</head>
@@ -149,7 +158,8 @@ function obtenerExtensionFichero($str)
 	                	<img src="images/icono_descargar.png" > </a> </li>
     	            <li><a href="editar.php?nombre=<?php echo $row['nombre']?>">
                     	<img src="images/icono_editar.png" > </a>       </li>
-        	        <li><a href="eliminar.php?nombre=<?php echo $row['nombre']."&criterio=$criterio";?>">
+                    	
+        	        <li><a onclick="deleteBox(<?php echo "'".$row['nombre']."','".$criterio."'"?>)" href="#">
                       	<img src="images/icono_eliminar.png" > </a> </li>
                       	
                       	<?php
