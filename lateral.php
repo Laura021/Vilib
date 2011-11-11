@@ -28,8 +28,17 @@
 		<a href="Inicio.php" name="entrar" class="menu_button blue medium">Inicio</a><br /><br />
 		<a href="Ver.php" name="entrar" class="menu_button blue medium">Busqueda de<br /> Documento</a><br /> <br />
 		
+	<?php 
+	}
+	if($usu == 4)
+	{?>
+		
+		<a href="Inicio.php" name="entrar" class="menu_button blue medium">Inicio</a><br /><br />
+		<a href="Ver.php" name="entrar" class="menu_button blue medium">Busqueda de<br /> Documento</a><br /> <br />
+		<a href="SubirDoc.php" name="entrar" class="menu_button blue medium">Subir<br /> Documento</a><br /><br />
+		
 	<?php }
-	
+		
 ?>
 
 	</center>
