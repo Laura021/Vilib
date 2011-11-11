@@ -97,9 +97,24 @@ function obtenerExtensionFichero($str)
 			$criterio = $_POST['criterio'];
 		}
 		
+		if($_SESSION['tipo_usu']==3)
+		{
+			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
+					 FROM documentos 
+					 WHERE nombre like '$criterio%' 
+					 AND Compartir = 1
+					 ORDER BY nombre ASC";
+		}
+		else
+		{
+			
+			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
+					  FROM documentos 
+					  WHERE nombre like '$criterio%' 
+					  ORDER BY nombre ASC";
+		}
 		
-		$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
-					 FROM documentos WHERE nombre like '$criterio%' ORDER BY nombre ASC";
+		
 	
 		$result = mysqli_query($conexion,$query) or die("no se pudo realizar la consulta");
 		
