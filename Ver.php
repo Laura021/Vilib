@@ -99,7 +99,7 @@ function obtenerExtensionFichero($str)
 		
 		if($_SESSION['tipo_usu']==3 || $_SESSION['tipo_usu']==4)
 		{
-			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
+			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc,Compartir
 					 FROM documentos 
 					 WHERE nombre like '$criterio%' 
 					 AND Compartir = 1
@@ -108,7 +108,7 @@ function obtenerExtensionFichero($str)
 		else
 		{
 			
-			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc
+			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc,Compartir
 					  FROM documentos 
 					  WHERE nombre like '$criterio%' 
 					  ORDER BY nombre ASC";
@@ -161,21 +161,31 @@ function obtenerExtensionFichero($str)
   			while ($row = mysqli_fetch_assoc($result)) 	
 			{
 				 
+				 if ($row['Compartir']==1 && ($_SESSION['tipo_usu']== 1 || $_SESSION['tipo_usu']== 2))
+				 {
+				 	$msjCompartir= "<img title=\"Documento Compartido\" src=images/icono_compartir.png></a>";
+				 }
+				 else 
+				 {				 
+					 $msjCompartir= "";
+				 }
+				 
 				echo "<div class=\"docs\">";								
-				echo "<span  class=\"tituloDoc\">".$row['nombre']." </span><br /><hr>";
-				echo "Descripcion: ".$row['Descripcion']."<br />";
+				echo "<span  class=\"tituloDoc\">".$row['nombre'].$msjCompartir.
+				 "</span><br /><hr>";
+				echo "<div class=\"descDocs\">Descripcion: ".$row['Descripcion']."<br /></div>";
 				?> 
 				<div class="iconosDocs">  
 				<ul class="listaDocs">                     
                     <li><a href="compartir.php?id=<?php echo $row['Id_Doc']?>">
-                    	<img src="images/icono_compartir.png" ></a> </li>
+                    	<img class="glow" src="images/icono_compartir.png" ></a> </li>
 	                <li><a <?php echo "href=\"".$row['Ruta']."\""; ?> >
-	                	<img src="images/icono_descargar.png" > </a> </li>
+	                	<img class="glow" src="images/icono_descargar.png" > </a> </li>
     	            <li><a href="editar.php?nombre=<?php echo $row['nombre']?>">
-                    	<img src="images/icono_editar.png" > </a>       </li>
+                    	<img class="glow" src="images/icono_editar.png" > </a>       </li>
                     	
         	        <li><a onclick="deleteBox(<?php echo "'".$row['nombre']."','".$criterio."'"?>)" href="#">
-                      	<img src="images/icono_eliminar.png" > </a> </li>
+                      	<img class="glow" src="images/icono_eliminar.png" > </a> </li>
                       	
                       	<?php
                       	$extension = obtenerExtensionFichero($row['Ruta']);
@@ -201,7 +211,7 @@ function obtenerExtensionFichero($str)
 							}
                       	?>
 
-                       	<img src="images/icono_ver.png" ></a>       </li>
+                       	<img class="glow" src="images/icono_ver.png" ></a>       </li>
                 </ul></div></div>
                 <br />
                     
