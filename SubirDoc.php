@@ -31,7 +31,7 @@ session_start();
 		
         <div id="upload_form">
 	  
-		<form action='Subir.php' method='post' enctype="multipart/form-data" name="formulario" 
+		<form onsubmit="if(document.forms[0].txtDescripcion.value.length>= 135){alert('El tamaño del textarea supera el permitido'); document.forms[0].txtDescripcion.select(); return false}" action='Subir.php' method='post' enctype="multipart/form-data" name="formulario" 
         	id="formulario">
 
 			<label>Subir un Documento.</label>
