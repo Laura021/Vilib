@@ -186,6 +186,18 @@ background-color:#a6c5dd;
     color: #999; text-shadow: 0px 3px 8px #2a2a2a;
 }
 
+.descInicio
+{
+	padding-left: 20px;
+	padding-right: 10px;
+	text-align: justify;
+}
+
+p
+{
+	color: white;
+}
+
 .descDocs
 {
     text-decoration: none;  
@@ -232,6 +244,13 @@ background-color:#a6c5dd;
 	text-shadow: 0px 0px 7px rgba(241,196,54,.6);
 	padding-left: 10px;
 }
+
+.center
+{
+	text-align: center ;!important
+	left: 45%;
+}
+
 
 .glow
 {
@@ -388,12 +407,6 @@ input[type=checkbox],
    background-position: top left;
    -webkit-background-size: 28px 28px; /* shrink high resolution background */
  }
-
-p {
-color: #2E2E2E;
-font-family: Verdana;
-padding: 1px 2px 1px 5px; 
-}
 
 h2 {
 	color: #FFFFFF;
