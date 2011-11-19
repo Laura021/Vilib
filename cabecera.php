@@ -1,7 +1,7 @@
 <html>
 
 
-<div id="header"><h2>Bienvenido a Vilib</h2> 
+<div id="header">
 	<div id="usrdata">
 		<div id="username">
 		<?php echo $_SESSION['usuario'];?>
