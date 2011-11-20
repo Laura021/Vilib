@@ -52,7 +52,7 @@ a:link {text-decoration:none;}
 		
 		text-decoration: none;
 		color: rgba(14, 67, 99, .7);
-		*color:#000000;
+		*color:#FFF;
 		font-family: "Rockwell Extra Bold";
 		font-size: 20px;
 		top: 50%;
@@ -121,7 +121,7 @@ min-height: 510px;
 height: auto;
 font-family: Verdana, Arial, sans-serif;
 color: #FFFFFF;
-*color:#000;
+*color:#FFFFFF;
 padding: 15px;
 text-align: left;
 vertical-align:middle;
