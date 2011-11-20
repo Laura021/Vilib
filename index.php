@@ -74,7 +74,7 @@
     <form name="form1" method="post" action="index.php">
      
      <label id="titles">Usuario</label><br />
-     <input  class="loginbox" name="txtUsuario" type="text" id="txtUsuario" required />
+     <input  class="loginbox" name="txtUsuario" type="text" pattern="[0-9]*" id="txtUsuario" required />
      <br />
      <br />
      <label id="titles">Contraseña</label><br />

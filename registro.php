@@ -102,25 +102,25 @@
 ?>
 <div id="formaRegistro">
 <form name="formaRegistro" method="post" action="">
-     
-     <label id="registro">Usuario: </label><br />
-     <input class="loginbox" name="txtUsuarioRegistro" type="text" id="txtUsuarioRegistro" required placeholder="Max. 30 caracteres."/>
+	
+     <label id="titles">N&uacutemero de Control:</label><br />
+     <input required  placeholder="Utiliza solo numeros." maxlength="8" class="loginbox" name="txtNC" type="text" id="txtNumC" pattern="[\d]{8}" />
+     <br />
+     <br />
+     <label id="registro">Nombre: </label><br />
+     <input class="loginbox" name="txtUsuarioRegistro" pattern="[a-zA-Z&ntilde&Ntilde]+[a-zA-Z&ntilde&Ntilde]+" type="text"  id="txtUsuarioRegistro" required placeholder="Min 2,Max. 30."/>
      <br />
      <br />
      <label id="registro">Apellido Paterno: </label><br />
-     <input required placeholder="Max. 30 caracteres." class="loginbox" name="txtPaternoRegistro" type="text" id="txtPaternoRegistro" />
+     <input required placeholder="Max. 30 caracteres." class="loginbox" name="txtPaternoRegistro" type="text" pattern="[a-zA-Z&ntilde&Ntilde]+[a-zA-Z&ntilde&Ntilde]+" id="txtPaternoRegistro" />
      <br />
      <br />
      <label id="registro">Apellido Materno: </label><br />
-     <input required placeholder="Max. 30 caracteres." class="loginbox" name="txtMaternoRegistro" type="text" id="txtMaternoRegistro" />
+     <input required placeholder="Max. 30 caracteres." class="loginbox" name="txtMaternoRegistro" type="text" pattern="[a-zA-Z&ntilde&Ntilde]+[a-zA-Z&ntilde&Ntilde]+" id="txtMaternoRegistro" />
      <br />
      <br />
      <label id="titles">Contrase&ntildea</label><br />
-     <input  required placeholder="Incluye letras, num. y mayusculas." pattern="(^((\w)*(([a-z]+[A-Z]+[\d]+)|([A-Z]+[a-z]+[\d]+)|([\d]+[a-z]+[A-Z]+)|([\d]+[A-Z]+[a-z]+))(\w)*))" class="loginbox" name="txtContraseñaRegistro" type="password" id="txtContraseñaRegistro" />
-     <br />
-     <br />
-     <label id="titles">N&uacutemero de Control:</label><br />
-     <input required  placeholder="Utiliza solo numeros." maxlength="8" class="loginbox" name="txtNC" type="text" id="txtNumC" pattern="[\d]{8}" />
+     <input  required placeholder="Letras, num, mayusculas." pattern="(^((\w)*(([a-z]+[A-Z]+[\d]+)|([A-Z]+[a-z]+[\d]+)|([\d]+[a-z]+[A-Z]+)|([\d]+[A-Z]+[a-z]+))(\w)*))" class="loginbox" name="txtContraseñaRegistro" type="password" id="txtContraseñaRegistro" />
      <br />
      <br />
      <label id="titles">Edad:</label><br />
