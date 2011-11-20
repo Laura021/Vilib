@@ -90,15 +90,15 @@ session_start();
 
 		<label name='descripcion'>Descripci&oacuten:</label>
 		</br>
-		</br>
-        <textarea name='txtDescripcion' cols='' rows=''></textarea>
+		</br>;
+        <textarea name='txtDescripcion' cols='' rows='' required="true"></textarea>
 		<br />
 		<br />
         
         <label>Selecciona un documento para continuar:</label>
         <br />
         
-		<input name='file' type='file' id='file'  value='Selecciona un Archivo'  />
+		<input name='file' type='file' id='file'  value='Selecciona un Archivo'  required="true"/>
 		<br />
 		<br />
 		

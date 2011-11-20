@@ -72,7 +72,7 @@ if ( $_FILES["file"]["size"] < 19000000)
 
 					mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 					
-					$msj = "Archivo :".$_FILES["file"]["name"]." subido con exito.";
+					$msj = "Archivo :<br />".$_FILES["file"]["name"]." ha subido con exito.";
 					
 						  
       			 }//fin else de poner en la carpeta
@@ -100,21 +100,14 @@ if ( $_FILES["file"]["size"] < 19000000)
         
 		<link rel="stylesheet" href="style2.css" media="screen"/>
 	</head>
-
 	<body>       
         <div id="container">
         	<?php include ("cabecera.php");?>
-
-			<?php include ("lateral.php");?>
-            
-        	<div id="main">
-            
-            <?php
-            echo $msj;
-            ?>
+			<?php include ("lateral.php");?>         
+            <div class="docs">
+            	<hr><br /><span  class="tituloDoc">
+            	<?php echo $msj; ?></span><br /><hr>
             </div>
-            
-		</div>
 
 	</body>
 </html>
