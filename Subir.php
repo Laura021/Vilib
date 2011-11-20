@@ -54,10 +54,10 @@ if ( $_FILES["file"]["size"] < 19000000)
 	//verifica si existe el archivo en la carpeta img.
 	
 	if($bien==1){
-    
-			if (file_exists("docs/" . $_FILES["file"]["name"]) )
+			$nombreFinal= $nombre.".".$ext;
+			if (file_exists("docs/" . $nombreFinal) )
       			{
-		    	  $msj="El archivo ". $_FILES["file"]["name"] . " - - - - > ya existe. ";
+		    	  $msj="El archivo ". $nombreFinal . " - - - - > ya existe. ";
       			}
 		    else
       			{
