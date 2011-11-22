@@ -1,11 +1,13 @@
-body {
-margin:5px 2px 2px 5px; 
-background: url(vilibbg.jpg) no-repeat;
+body 
+{
+	margin:5px 2px 2px 5px; 
+	background: url(vilibbg.jpg) no-repeat;
 
-background-color: #0a1117;
+	background-color: #0a1117;
 }
 
-hr{ 
+hr
+{ 
     display:block;
     border:none;
     color:white;
@@ -16,7 +18,8 @@ hr{
 
 a:link {text-decoration:none;}
 
-#formaRegistro {
+#formaRegistro 
+{
 	
 	background-color: rgba(14, 67, 99, .7);
 	*background-color: #085f69;
@@ -66,88 +69,98 @@ a:link {text-decoration:none;}
     	size: 20px;
 	}
 	
-#container {
-margin-left: auto;
-margin-right: auto;
-width: 850px;
-height: 780px;
+#container 
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 850px;
+	height: 780px;
 }
 
-#header {
-width: 820px;
-height: 140px;
-background: url('images/logo.png') no-repeat;
+#header 
+{
+	width: 820px;
+	height: 140px;
+	background: url('images/logo.png') no-repeat;
 }
 
-#usrdata {
-width: auto;
-height: 50px;
-text-align: left;
-float:right;
-display: block;
+#usrdata 
+{
+	width: auto;
+	height: 50px;
+	text-align: left;
+	float:right;
+	display: block;
 }
 
-#username {
-width: auto;
-height: 20px;
-color:#FFF;
+#username 
+{
+	width: auto;
+	height: 20px;
+	color:#FFF;
 
-position:relative;
-float:right;
-padding-top:5px;
-padding-right: 15px;
-text-align: center;
-display: block;
-}
-#logout {
-width: 100px;
-height: 20px;
-float:right;
-padding-top:8px;
-display: block;
+	position:relative;
+	float:right;
+	padding-top:5px;
+	padding-right: 15px;
+	text-align: center;
+	display: block;
 }
 
-#leftside {
-float: left;
-width: 150px;
-height: 540px;
+#logout 
+{
+	width: 100px;
+	height: 20px;
+	float:right;
+	padding-top:8px;
+	display: block;
+}
+
+#leftside 
+{
+	float: left;
+	width: 150px;
+	height: 540px;
 }
 
 
-#main {
-float: left;
-width: 650px;
-min-height: 510px;
-height: auto;
-font-family: Verdana, Arial, sans-serif;
-color: #FFFFFF;
-*color:#FFFFFF;
-padding: 15px;
-text-align: left;
-vertical-align:middle;
-background-color:rgba(77, 154, 187, .3);
-border-radius:15px;
+#main 
+{
+	float: left;
+	width: 650px;
+	min-height: 510px;
+	height: auto;
+	font-family: Verdana, Arial, sans-serif;
+	color: #FFFFFF;
+	*color:#FFFFFF;
+	padding: 15px;
+	text-align: left;
+	vertical-align:middle;
+	background-color:rgba(77, 154, 187, .3);
+	border-radius:15px;
 
--webkit-box-shadow: inset 0px 0px 20px rgba(0,0,0,.8);
--moz-box-shadow: inset 0px 0px 20px rgba(0,0,0,.8);
-box-shadow: inset 0px 0px 20px rgba(0,0,0,.8);
+	-webkit-box-shadow: inset 0px 0px 20px rgba(0,0,0,.8);
+	-moz-box-shadow: inset 0px 0px 20px rgba(0,0,0,.8);
+	box-shadow: inset 0px 0px 20px rgba(0,0,0,.8);
 
 }
 
-#main2 {
-float: left;
-width: 650px;
-height: 510px;
-font-family: Verdana, Arial, sans-serif;
-color: #FFFFFF;
-*color:#000;
-padding: 15px;
-text-align: center;
-vertical-align:middle;
-background-color:#a6c5dd;
+#main2 
+{
+	float: left;
+	width: 650px;
+	height: 510px;
+	font-family: Verdana, Arial, sans-serif;
+	color: #FFFFFF;
+	*color:#000;
+	padding: 15px;
+	text-align: center;
+	vertical-align:middle;
+	background-color:#a6c5dd;
 }
 
-.registroExitoso {
+.registroExitoso 
+{
 	position:absolute;
 	width: 250px;
 	height: 200px;
@@ -178,15 +191,18 @@ background-color:#a6c5dd;
 	box-shadow: inset 0px 0px 20px rgba(0,0,0,.8);	
 }
 
-.busquedaTxt{
+.busquedaTxt
+{
 	width: 320px;
 }
 
-.busqueda{
+.busqueda
+{
 	display: inline;
 }
 
-.docs{
+.docs
+{
 	background-color: rgba(22,53,59,.7);
 	*background:#F2F2F2;
 	border-radius:15px;
@@ -286,6 +302,7 @@ p
 	-moz-transition: all .5s ease-in-out;
 	opacity: .5;
 }
+
 .glow:hover
 {
 	transition: all .5s ease-in-out;
@@ -296,7 +313,8 @@ p
 }
 
 
-label {
+label 
+{
 	clear: left; margin: 11px 20px 0 0; width: 95px;
 	font-size: 16px; 
 	color: #f2f2f2;

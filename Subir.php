@@ -10,6 +10,9 @@ function obtenerExtensionFichero($str)
 	  }
 include ("conexion.php");
 
+if (isset($_FILES['file']) && isset($_POST['txtNombre']))
+{
+	
 $patronNombre = "((\w)+)";
 $nombre=$_POST['txtNombre'];
 $dpto=$_POST['listaDpto'];
@@ -86,6 +89,11 @@ if ( $_FILES["file"]["size"] < 19000000)
   	}
 		  //echo "<br />";
 		  //echo "<a href='SubirDoc.php'>Regresar a la pagina anterior<a />";
+}//fin del isset
+else {
+	$msj= "Error, Archivo demasiado grande el limite es de 20Mb      \n
+		   El archivo no se subio, Suba un archivo menor y complete los datos, porfavor :)";
+}
 
 //valida si existe una sesión, si no regresa a la pagina de login
 	if(empty($_SESSION['access']))
