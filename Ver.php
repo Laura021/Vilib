@@ -177,14 +177,14 @@ function obtenerExtensionFichero($str)
 				<div class="iconosDocs">  
 				<ul class="listaDocs">                     
                     <li><a href="compartir.php?id=<?php echo $row['Id_Doc']?>">
-                    	<img class="glow" src="images/icono_compartir.png" ></a> </li>
+                    	<img class="glow" title="Compartir/ Descompartir archivo con alumnos" src="images/icono_compartir.png" ></a> </li>
 	                <li><a <?php echo "href=\"".$row['Ruta']."\""; ?> >
-	                	<img class="glow" src="images/icono_descargar.png" > </a> </li>
+	                	<img class="glow" title="Dar click derecho para descargar" src="images/icono_descargar.png" > </a> </li>
     	            <li><a href="editar.php?nombre=<?php echo $row['nombre']?>">
-                    	<img class="glow" src="images/icono_editar.png" > </a>       </li>
+                    	<img class="glow" title="Editar la informacion del archivo" src="images/icono_editar.png" > </a>       </li>
                     	
         	        <li><a onclick="deleteBox(<?php echo "'".$row['nombre']."','".$criterio."'"?>)" href="#">
-                      	<img class="glow" src="images/icono_eliminar.png" > </a> </li>
+                      	<img class="glow" title="Eliminar" src="images/icono_eliminar.png" > </a> </li>
                       	
                       	<?php
                       	$extension = obtenerExtensionFichero($row['Ruta']);
@@ -210,7 +210,7 @@ function obtenerExtensionFichero($str)
 							}
                       	?>
 
-                       	<img class="glow" src="images/icono_ver.png" ></a>       </li>
+                       	<img class="glow" title="Visualizar Online" src="images/icono_ver.png" ></a>       </li>
                 </ul></div></div>
                 <br />
                     
