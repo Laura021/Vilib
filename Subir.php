@@ -91,8 +91,9 @@ if ( $_FILES["file"]["size"] < 19000000)
 		  //echo "<a href='SubirDoc.php'>Regresar a la pagina anterior<a />";
 }//fin del isset
 else {
-	$msj= "Error, Archivo demasiado grande el limite es de 20Mb      \n
-		   El archivo no se subio, Suba un archivo menor y complete los datos, porfavor :)";
+	$msj= "Error. El archivo es demasiado grande, el límite es de 20Mb.      \n
+		   El archivo no ha sido almacenado, intente con un archivo de menor tamaño\n
+		   y complete los datos, por favor. :)";
 }
 
 //valida si existe una sesión, si no regresa a la pagina de login
