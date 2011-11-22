@@ -1,5 +1,5 @@
 <html>
-
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
 
 <div id="header">
 	<div id="usrdata">

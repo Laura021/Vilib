@@ -49,7 +49,7 @@ session_start();
         <div id="upload_form">
         
 	  
-		    <form onsubmit="if(document.forms[0].txtDescripcion.value.length>= 135){alert('El tamaño del textarea supera el permitido'); document.forms[0].txtDescripcion.select(); return false}" action='editarSucio.php' method='post' enctype="multipart/form-data" name="formulario" 
+		    <form onsubmit="if(document.forms[0].txtDescripcion.value.length>= 135){alert('El tamaño de la descripcion supera el permitido'); document.forms[0].txtDescripcion.select(); return false}" action='editarSucio.php' method='post' enctype="multipart/form-data" name="formulario" 
         	id="formulario">
 
 			<input type="hidden" name='txtID' id='txtID' value="<?php echo $registro['Id_Doc']?>"/>
@@ -129,8 +129,7 @@ session_start();
 
 		<label name='descripcion'>Descripcion</label>
 		
-        <textarea name='txtDescripcion' cols='' rows='10' >
-        <?php echo  $registro['Descripcion']?>
+        <textarea name='txtDescripcion'><?php echo  $registro['Descripcion']?>
 		</textarea>
 		<br />
 		<br />

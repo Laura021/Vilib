@@ -28,12 +28,12 @@ function obtenerExtensionFichero($str)
             img:        ['png', 'jpg', 'jpeg', 'gif', 'bmp'], 
             swf:        ['swf'], 
             flv:        ['flv'], 
-            qt:         ['dv', 'mov', 'moov', 'movie', 'mp4'], 
+            qt:         ['dv', 'mov', 'moov', 'movie'], 
             wmp:        ['asf', 'wm', 'wmv'], 
             qtwmp:      ['avi', 'mpg', 'mpeg'], 
             iframe:       ['asp', 'aspx', 'cgi', 'cfm', 'htm', 'html', 'pl', 'php', 
                         'php3', 'php4', 'php5', 'phtml', 'rb', 'rhtml', 'shtml', 
-                        'txt', 'vbs', 'java','cs','xml','pdf'] 
+                        'txt', 'vbs', 'java','cs','xml','pdf', 'css'] 
 		}
 		
 		Shadowbox.init( 
@@ -68,7 +68,7 @@ function obtenerExtensionFichero($str)
 		
 	function deleteBox(a,b)
 	{
-		var x=window.confirm(" ¿ Deseas eliminar el archivo?")
+		var x=window.confirm("  Deseas eliminar el archivo?")
 		if (x)
 			window.location= "eliminar.php?nombre="+a+"&criterio="+b
 	}
@@ -146,9 +146,8 @@ function obtenerExtensionFichero($str)
                       <label>Nombre del Archivo</label>
 					  <input name="criterio" type="text" id="criterio" value="" size="50" class="busquedaTxt"/>
 					  <input type="submit" id="btbuscar" value="Buscar" class="menu_button blue" />
+					  <div class="tituloAviso"> Para descargar un archivo presiona boton derecho sobre el icono de disquette y selecciona la opcion &quotguardar enlace como...&quot </div>
 				</div>
-						   <br />
-						   <br />
 				</form>
 	<?php  
 		if(isset($_POST['criterio']) || !empty($_SESSION['verCriterio']))
@@ -157,7 +156,7 @@ function obtenerExtensionFichero($str)
 		{
 			$_SESSION['verCriterio']="";
 		}
-			echo " ".$MSG;
+			echo " <div class=\"tituloAviso\">".$MSG."</div>";
   			while ($row = mysqli_fetch_assoc($result)) 	
 			{
 				 
@@ -192,7 +191,7 @@ function obtenerExtensionFichero($str)
                       	if( $extension== "png" || $extension == "jpg" || $extension == "jpeg"
                       		|| $extension == "gif" || $extension == "bmp" || $extension == "swf"
                       		|| $extension == "flv" || $extension == "dv" || $extension == "mov"
-                      		|| $extension == "moov" || $extension == "movie" || $extension == "mp4"
+                      		|| $extension == "moov" || $extension == "movie"
                       		|| $extension == "asf" || $extension == "wm" || $extension == "wmv"
                       		|| $extension == "avi" || $extension == "mpg" || $extension == "mpeg"
                       		|| $extension == "htm" || $extension == "html" || $extension == "xml"
@@ -201,7 +200,7 @@ function obtenerExtensionFichero($str)
                       		|| $extension == "php4" || $extension == "php5" || $extension == "phtml"
                       		|| $extension == "rb" || $extension == "rhtml" || $extension == "shtml"
                       		|| $extension == "txt" || $extension == "vbs" || $extension == "java"
-                      		|| $extension == "cs" || $extension == "pdf")
+                      		|| $extension == "cs" || $extension == "pdf" || $extension == "css")
 							{
 								echo "<li><a rel=\"shadowbox\" onClick=\"defaultType()\" href=\"".$row['Ruta']."\" >";
 							}

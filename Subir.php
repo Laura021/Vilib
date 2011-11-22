@@ -75,7 +75,7 @@ if ( $_FILES["file"]["size"] < 19000000)
 
 					mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
 					
-					$msj = "Archivo :<br />".$_FILES["file"]["name"]." ha subido con exito.";
+					$msj = "Archivo :<br />".$_FILES["file"]["name"]." se ha subido con exito.";
 					
 						  
       			 }//fin else de poner en la carpeta
