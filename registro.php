@@ -3,7 +3,22 @@
 
 <head>
 		
-		<link rel="stylesheet" href="style2.css" media="screen"/>
+		<!--[if IE 8]>
+			<link rel="stylesheet" href="style2.css" media="screen"/>
+		<![endif]-->
+		
+		
+			<link rel="stylesheet" href="style2.css" media="screen"/>
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 </head>
 
