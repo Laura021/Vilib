@@ -90,7 +90,7 @@ session_start();
 
 		<label name='descripcion'>Descripci&oacuten:</label>
 		</br>
-		</br>;
+		</br>
         <textarea name='txtDescripcion' cols='' rows='' required="true"></textarea>
 		<br />
 		<br />
