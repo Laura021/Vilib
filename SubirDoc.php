@@ -31,7 +31,7 @@ session_start();
 		
         <div id="upload_form">
 	  
-		<form onsubmit="if(document.forms[0].txtDescripcion.value.length>= 135){alert('El tamaño del textarea supera el permitido'); document.forms[0].txtDescripcion.select(); return false}" action='Subir.php' method='post' enctype="multipart/form-data" name="formulario" 
+		<form onsubmit="if(document.forms[0].txtDescripcion.value.length> 500){alert('El tamaño de la descripcion supera el permitido, maximo 500 caracteres'); document.forms[0].txtDescripcion.select(); return false}" action='Subir.php' method='post' enctype="multipart/form-data" name="formulario" 
         	id="formulario">
 
 			<label>Subir un Documento.</label>
