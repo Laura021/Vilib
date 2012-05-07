@@ -80,38 +80,73 @@ function obtenerExtensionFichero($str)
 <?php include ("conexion.php");?>
 
 <?php
-	if(isset($_POST['criterio']) || !empty($_SESSION['verCriterio']))
+
+	if(isset($_POST['criterio']) || !empty($_SESSION['verCriterio'])) 
 	{
+		$dpto=$_POST['listaDpto'];
+		
 		if(empty($_POST['criterio']))
 		{
 			if (!empty($_SESSION['verCriterio']))
 			{
 				$criterio = $_SESSION['verCriterio'];
 			}
-			else {
+			else 
+			{
 				$criterio = "%";
 			}
 			
-		}
-		else {
+		}//si se puso o no una palabra para buscar
+		else 
+		{
 			$criterio = $_POST['criterio'];
 		}
+
+		//restricciones para los usuarios
 		
-		if($_SESSION['tipo_usu']==3 || $_SESSION['tipo_usu']==4)
+		if($_SESSION['tipo_usu']==3 || $_SESSION['tipo_usu']==4) //los documentos que solo ven alumnos y superalumnos
 		{
-			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc,Compartir
+			$query = "SELECT Nombre,Descripcion,Ruta,Id_Doc,Compartir
 					 FROM documentos 
-					 WHERE nombre like '$criterio%' 
+					 WHERE Nombre like '$criterio%' 
 					 AND Compartir = 1
-					 ORDER BY nombre ASC";
+					 ORDER BY Nombre ASC";
 		}
 		else
 		{
+			//cambios apartir de aqui
 			
-			$query = "SELECT nombre,Descripcion,Ruta,Id_Doc,Compartir
-					  FROM documentos 
-					  WHERE nombre like '$criterio%' 
-					  ORDER BY nombre ASC";
+			if($dpto == 0 )
+			{
+					$query = "SELECT *
+					  			FROM documentos 
+					  			WHERE nombre like '$criterio%' 
+					  			ORDER BY nombre ASC";
+					  /*$query = "SELECT Id_Doc
+      									,Id_Cat
+      									,departamento.Nombre AS depa
+								        ,documentos.Nombre AS Nombre
+      									,Descripcion
+      									,Ruta
+      									,Compartir
+      									,Fecha
+								FROM documentos 
+								INNER JOIN departamento
+								ON documentos.Id_Dpto = departamento.Id_Dpto
+								WHERE Nombre like '$criterio%'
+								ORDER BY Nombre ASC";*/
+								
+			}
+			else
+			{
+					$query = "SELECT *
+					  			FROM documentos 
+					  			WHERE nombre like '$criterio%' 
+					  			AND Id_Dpto= $dpto
+					  			ORDER BY Nombre ASC";
+			}
+			
+		
 		}
 		
 		
@@ -146,6 +181,31 @@ function obtenerExtensionFichero($str)
                       <label>Nombre del Archivo</label>
 					  <input name="criterio" type="text" id="criterio" value="" size="50" class="busquedaTxt"/>
 					  <input type="submit" id="btbuscar" value="Buscar" class="menu_button blue" />
+					  <br />
+					  <br />
+					  
+				<?php	  		
+				$qry="SELECT Id_Dpto, Nombre FROM departamento;";
+				
+				$conexion=mysqli_connect($host,$user,$password,$dbname) 
+						or die("no se pudo contectar al servidor");
+			
+				$resultado=mysqli_query($conexion,$qry) or die(mysqli_error($conexion));
+
+				echo "<label name='Dpto'> Departamento: </label>";
+				echo "<select name='listaDpto'>";
+				echo "<option value='0'>Todos</option>";
+
+				while($rew=mysqli_fetch_array($resultado))
+				{
+					echo "<option value='".$rew["Id_Dpto"]."'>".$rew["Nombre"]."</option>";
+				}
+
+				echo "</select>";
+				echo "<br />";
+					  
+				?>
+				<br /> 
 					  <div class="tituloAviso"> Para descargar un archivo presiona boton derecho sobre el icono de disquette y selecciona la opcion &quotguardar enlace como...&quot </div>
 				</div>
 				</form>
@@ -157,7 +217,7 @@ function obtenerExtensionFichero($str)
 			$_SESSION['verCriterio']="";
 		}
 			echo " <div class=\"tituloAviso\">".$MSG."</div>";
-  			while ($row = mysqli_fetch_assoc($result)) 	
+  			while ($row = mysqli_fetch_assoc($result))//aqui imprimo la lista de documentos 	
 			{
 				 
 				 if ($row['Compartir']==1 && ($_SESSION['tipo_usu']== 1 || $_SESSION['tipo_usu']== 2))
@@ -170,20 +230,26 @@ function obtenerExtensionFichero($str)
 				 }
 				 
 				echo "<div class=\"docs\">";								
-				echo "<span  class=\"tituloDoc\">".$row['nombre'].$msjCompartir.
+				
+				echo "<span  class=\"tituloDoc\">".$row['Nombre'].$msjCompartir.
 				 "</span><br /><hr>";
+				
+				/*echo "<div class=\"descDocs\">Departamento ".$row['depa']."<br /></div>";*/
+				
 				echo "<div class=\"descDocs\">Descripcion: ".$row['Descripcion']."<br /></div>";
 				?> 
 				<div class="iconosDocs">  
 				<ul class="listaDocs">                     
                     <li><a href="compartir.php?id=<?php echo $row['Id_Doc']?>">
                     	<img class="glow" title="Compartir/ Descompartir archivo con alumnos" src="images/icono_compartir.png" ></a> </li>
+	               
 	                <li><a <?php echo "href=\"".$row['Ruta']."\""; ?> >
 	                	<img class="glow" title="Dar click derecho para descargar" src="images/icono_descargar.png" > </a> </li>
-    	            <li><a href="editar.php?nombre=<?php echo $row['nombre']?>">
+    	           
+    	            <li><a href="editar.php?nombre=<?php echo $row['Nombre']?>">
                     	<img class="glow" title="Editar la informacion del archivo" src="images/icono_editar.png" > </a>       </li>
                     	
-        	        <li><a onclick="deleteBox(<?php echo "'".$row['nombre']."','".$criterio."'"?>)" href="#">
+        	        <li><a onclick="deleteBox(<?php echo "'".$row['Nombre']."','".$criterio."'"?>)" href="#">
                       	<img class="glow" title="Eliminar" src="images/icono_eliminar.png" > </a> </li>
                       	
                       	<?php
